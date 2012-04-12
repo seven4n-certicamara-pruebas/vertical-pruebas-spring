@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-bootstrap.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-core-client-java5.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-core-client.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-core.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-jboss-as-integration.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-jms-client-java5.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-jms-client.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-jms.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-logging.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-spring-integration.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/hornetq-twitter-integration.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jboss-jms-api.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jboss-mc.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jnp-client.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jnpserver.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/netty.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/twitter4j-core.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

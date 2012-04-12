@@ -1,0 +1,7 @@
+Prueba JMS usando Hornet Q
+
+Lo único que se necesita hacer es montar el proyecto en VMware vFabric server o Tomcat e ir a la pagina principal del proyecto (por defecto es http://localhost:8080/PruebaJMS_HQ/). Al hacer esto en la consola se observaran varios mensajes impresos por la aplicación dos de INFO (aquí es donde se entra al controlador y se envía el mensaje).
+
+También imprime un mensaje con lo siguiente MESSAGE RECEIVED: Hello world; el listener creado para escuchar mensajes asincrónicos recibió el mensaje y lo imprimió. 
+
+
