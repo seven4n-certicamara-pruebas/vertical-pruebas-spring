@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="CertiFacturaCacheManager">
+	<defaultCache maxElementsInMemory="5" eternal="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="0" overflowToDisk="false"
+		maxElementsOnDisk="10000000" diskPersistent="false"
+		memoryStoreEvictionPolicy="LRU">
+	</defaultCache>
+
+	<cache name="CERTIFACTURA_CLIENTES" maxElementsInMemory="10" eternal="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="0" overflowToDisk="false"
+		diskPersistent="false"
+		memoryStoreEvictionPolicy="LRU">
+	</cache>
+</ehcache>
