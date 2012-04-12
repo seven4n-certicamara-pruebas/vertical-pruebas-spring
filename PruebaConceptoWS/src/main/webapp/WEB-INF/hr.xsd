@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.marvelution.com/samples/schemas/HelloWorldServiceSchema"
+        xmlns="http://www.marvelution.com/samples/schemas/HelloWorldServiceSchema"
+        elementFormDefault="qualified">
+
+        <xsd:element name="SayHi">
+                <xsd:complexType>
+                        <xsd:sequence>
+                                <xsd:element name="text" type="xsd:string" minOccurs="1"
+                                        maxOccurs="1" />
+                        </xsd:sequence>
+                </xsd:complexType>
+        </xsd:element>
+
+        <xsd:element name="SayHiResponse">
+                <xsd:complexType>
+                        <xsd:sequence>
+                                <xsd:element name="response" type="xsd:string" minOccurs="1"
+                                        maxOccurs="1" />
+                        </xsd:sequence>
+                </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="SayHello">
+                <xsd:complexType>
+                        <xsd:sequence>
+                                <xsd:element name="text" type="xsd:string" minOccurs="1"
+                                        maxOccurs="1" />
+                        </xsd:sequence>
+                </xsd:complexType>
+        </xsd:element>
+
+        <xsd:element name="SayHelloResponse">
+                <xsd:complexType>
+                        <xsd:sequence>
+                                <xsd:element name="response" type="xsd:string" minOccurs="1"
+                                        maxOccurs="1" />
+                        </xsd:sequence>
+                </xsd:complexType>
+        </xsd:element>
+
+</xsd:schema>
