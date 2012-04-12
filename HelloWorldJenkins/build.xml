@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TestCertiFactura" default="help" basedir=".">
+  <property file="build.properties"/>
+  <!-- Define the properties used by the build -->
+  <property name="app.name"      value="hello"/>
+  
+  <property name="tcserver.home" value="/home/marci//dev/vfabric-tc-server-developer-2.6.4.RELEASE/certifactura" />
+  <property name="work.home"    value="${basedir}/work"/>
+  <property name="dist.home"     value="${basedir}/dist"/>
+  <property name="src.home"      value="${basedir}/src"/>
+  <property name="web.home"      value="${basedir}/web"/>
+  <property name="local.lib"      value="${basedir}/web/WEB-INF/lib"/>
+
+  <target name="help">
+    <echo>You can use the following targets:</echo>
+    <echo> </echo>
+    <echo>  help    : (default) Prints this message </echo>
+    <echo>  all     : Cleans, compiles, and packages application</echo>
+    <echo>  clean   : Deletes work directories</echo>
+    <echo>  compile : Compiles servlets into class files</echo>
+    <echo>  dist    : Packages artifacts into a deployable WAR</echo>
+  	<echo>  deploywar    : Makes a deploy in the selected tcserver instance</echo>
+    <echo></echo>
+    <echo>For example, to clean, compile, and package all at once, run:</echo>
+    <echo>prompt> ant all </echo>
+  </target>
+
+  <!-- Define the CLASSPATH -->
+  <path id="compile.classpath">
+    <fileset dir="${tcserver.home}/bin">
+      <include name="*.jar"/>
+    </fileset>
+    <pathelement location="${tcserver.home}/lib"/>
+    <fileset dir="${tcserver.home}/lib">
+      <include name="*.jar"/>
+    </fileset>
+  	<fileset dir="${local.lib}">
+  	      <include name="*.jar"/>
+  	    </fileset>
+  </path>
+
+  <target name="all" depends="clean,compile,dist"
+          description="Clean work dirs, then compile and create a WAR"/>
+
+  <target name="clean"
+          description="Delete old work and dist directories">
+    <delete dir="${work.home}"/>
+    <delete dir="${dist.home}"/>
+  </target>
+
+  <target name="prepare" depends="clean"
+          description="Create working dirs and copy static files to work dir">
+    <mkdir  dir="${dist.home}"/>
+    <mkdir  dir="${work.home}/WEB-INF/classes"/>
+    <!-- Copy static HTML and JSP files to work dir -->
+    <copy todir="${work.home}">
+      <fileset dir="${web.home}"/>
+    </copy>
+  </target>
+
+  <target name="compile" depends="prepare"
+          description="Compile Java sources and copy to WEB-INF/classes dir">
+    <javac srcdir="${src.home}"
+          destdir="${work.home}/WEB-INF/classes">
+        <classpath refid="compile.classpath"/>
+    </javac>
+    <copy  todir="${work.home}/WEB-INF/classes">
+      <fileset dir="${src.home}" excludes="**/*.java"/>
+    </copy>
+
+  </target>
+
+
+  <target name="dist" depends="compile"
+          description="Create WAR file for binary distribution">
+    <jar jarfile="${dist.home}/${app.name}.war"
+         basedir="${work.home}"/>
+  </target>
+	
+	<target name="deploywar" depends="clean,compile,dist" description="Deploy application as a WAR file">
+	    <copy todir="${deploy.path}" preservelastmodified="true">
+	        <fileset dir="${dist.home}/">
+	            <include name="${app.name}.war"/>
+	        </fileset>
+	    </copy>
+	</target>
+
+</project> 
