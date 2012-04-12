@@ -1,6 +1,7 @@
 package com.company.prueba.domain;
 
 import java.io.Serializable;
+//Prueba
 
 public class Product implements Serializable {
 
