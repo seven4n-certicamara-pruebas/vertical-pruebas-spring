@@ -1,7 +1,8 @@
 package com.company.prueba.domain;
 
 import java.io.Serializable;
-//Prueba Product
+
+//En esta clase se definen los Getter y Setters para el cambio de precios 
 
 public class Product implements Serializable {
 

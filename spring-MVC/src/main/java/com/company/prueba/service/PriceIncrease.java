@@ -3,6 +3,8 @@ package com.company.prueba.service;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+// Esta clase extraerá el porcentaje de incremento que queremos aplicar a los precios.
+
 public class PriceIncrease {
 
     /** Logger for this class and subclasses */

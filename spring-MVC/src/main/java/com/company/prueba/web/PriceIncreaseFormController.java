@@ -15,44 +15,68 @@ import org.apache.commons.logging.LogFactory;
 import com.company.prueba.service.PriceIncrease;
 import com.company.prueba.service.ProductManager;
 
+/*
+ * Esta clase actuará como controlador de las peticiones de incremento de precio realizadas desde 
+ * el formulario. 
+ *  
+ * */
+
 @Controller
-@RequestMapping(value="/priceincrease.htm")
+@RequestMapping(value = "/priceincrease.htm")
 public class PriceIncreaseFormController {
 
-    /** Logger for this class and subclasses */
-    protected final Log logger = LogFactory.getLog(getClass());
+	/** Logger for this class and subclasses */
+	protected final Log logger = LogFactory.getLog(getClass());
 
-    @Autowired
-    private ProductManager productManager;
+	/*
+	 * Spring inyectará automáticamente al controlador del formulario la
+	 * referencia al servicio ProductManager gracias a la anotació @Autowired.
+	 */
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String onSubmit(PriceIncrease priceIncrease, BindingResult result)
-    {
-        if (result.hasErrors()) {
-            return "priceincrease";
-        }
-		
-        int increase = priceIncrease.getPercentage();
-        logger.info("Increasing prices by " + increase + "%.");
+	@Autowired
+	private ProductManager productManager;
 
-        productManager.increasePrice(increase);
+	/*
+	 * El método onSubmit(..) será invocado cuando el usuario envíe del
+	 * formulario a través del método POST. El uso de la anotación @Valid
+	 * permitirá validar el incremento introducido y volverá a mostrar el
+	 * formulario en caso de que éste no sea válido.
+	 */
 
-        return "redirect:/hello.htm";
-    }
+	@RequestMapping(method = RequestMethod.POST)
+	public String onSubmit(PriceIncrease priceIncrease, BindingResult result) {
+		if (result.hasErrors()) {
+			return "priceincrease";
+		}
 
-    @RequestMapping(method = RequestMethod.GET)
-    protected PriceIncrease formBackingObject(HttpServletRequest request) throws ServletException {
-        PriceIncrease priceIncrease = new PriceIncrease();
-        priceIncrease.setPercentage(15);
-        return priceIncrease;
-    }
+		int increase = priceIncrease.getPercentage();
+		logger.info("Increasing prices by " + increase + "%.");
 
-    public void setProductManager(ProductManager productManager) {
-        this.productManager = productManager;
-    }
+		productManager.increasePrice(increase);
 
-    public ProductManager getProductManager() {
-        return productManager;
-    }
+		return "redirect:/hello.htm";
+	}
+
+	/*
+	 * El método formBackingObject() será invocado antes de que el formulario se
+	 * muestre al usuario (petición GET) y rellenará el campo con un incremento
+	 * por defecto de un 15%.
+	 */
+
+	@RequestMapping(method = RequestMethod.GET)
+	protected PriceIncrease formBackingObject(HttpServletRequest request)
+			throws ServletException {
+		PriceIncrease priceIncrease = new PriceIncrease();
+		priceIncrease.setPercentage(15);
+		return priceIncrease;
+	}
+
+	public void setProductManager(ProductManager productManager) {
+		this.productManager = productManager;
+	}
+
+	public ProductManager getProductManager() {
+		return productManager;
+	}
 
 }

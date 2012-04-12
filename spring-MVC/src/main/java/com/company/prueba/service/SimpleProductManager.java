@@ -1,11 +1,9 @@
 package com.company.prueba.service;
 
 import java.util.List;
-
 import com.company.prueba.domain.Product;
 
-
-
+//Esta clase hace la implementación de la interface ProductManager.
 public class SimpleProductManager implements ProductManager {
 
     private List<Product> products;
