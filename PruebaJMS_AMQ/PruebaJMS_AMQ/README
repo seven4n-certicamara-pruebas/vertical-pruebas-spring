@@ -1,0 +1,14 @@
+Prueba JMS usando Active MQ
+
+Para correr éste proyecto se debe cargar en eclipse o en STS y se corre el TestJms.java. Antes de hacer esto se necesita instalar activeMQ y crear un queue llamado orderQueue.
+Las siguientes paginas explican como instalar activeMQ:
+
+https://sites.google.com/a/microgolem.com/www/home/infrastructure/linux/ubuntu/activemq-installation
+http://servicebus.blogspot.com/2011/02/installing-apache-active-mq-on-ubuntu.html
+http://sillycat.iteye.com/blog/1027282
+
+Para crear la cola se ingresa a la pagina de administración de activeMQ (por defecto es http://localhost:8161/admin/), se ingresa a la pestaña Queues y se crea la cola.
+
+Cuando se ejecuta la aplicación, lo que ésta hace es cargar el contexto de Spring, el cual incluye un listener al que le llegan los mensajes y y un bean de servicios para
+el envío de mensajes. La aplicación llama el servicio de envío cinco veces, en la consola se observa el envío de los cinco mensajes y la interceptación de estos mismos por el listener.
+También se puede verificar que la cola halla recibido los mensajes mirando en la pagina de administración de activeMQ.
