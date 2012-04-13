@@ -4,7 +4,7 @@
   <!-- Define the properties used by the build -->
   <property name="app.name"      value="hello"/>
   
-  <property name="tcserver.home" value="/home/marci//dev/vfabric-tc-server-developer-2.6.4.RELEASE/certifactura" />
+  <property name="tcserver.home" value="/home/marci/dev/vfabric-tc-server-developer-2.6.4.RELEASE/certifactura" />
   <property name="work.home"    value="${basedir}/work"/>
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="src.home"      value="${basedir}/src"/>
