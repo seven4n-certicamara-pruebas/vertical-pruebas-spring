@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="PruebaConceptoSeguridad">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes/" source-path="/ImportedClasses"/>
+        <dependent-module archiveName="spring-webmvc-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-webmvc-3.0.3.RELEASE/spring-webmvc-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-context-support-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-context-support-3.0.3.RELEASE/spring-context-support-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-security-web-3.0.5.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-security-web-3.0.5.RELEASE/spring-security-web-3.0.5.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-core-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-core-3.0.3.RELEASE/spring-core-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-security-config-3.0.5.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-security-config-3.0.5.RELEASE/spring-security-config-3.0.5.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-expression-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-expression-3.0.3.RELEASE/spring-expression-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-tx-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-tx-3.0.3.RELEASE/spring-tx-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-beans-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-beans-3.0.3.RELEASE/spring-beans-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-context-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-context-3.0.3.RELEASE/spring-context-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-security-taglibs-3.0.5.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-security-taglibs-3.0.5.RELEASE/spring-security-taglibs-3.0.5.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-web-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-web-3.0.3.RELEASE/spring-web-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-security-core-3.0.5.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-security-core-3.0.5.RELEASE/spring-security-core-3.0.5.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="standard-1.1.2.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/standard-1.1.2/standard-1.1.2">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-jdbc-3.0.3.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-jdbc-3.0.3.RELEASE/spring-jdbc-3.0.3.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="spring-security-acl-3.0.5.RELEASE.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/spring-security-acl-3.0.5.RELEASE/spring-security-acl-3.0.5.RELEASE">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/PruebaConceptoSeguridad/build/classes"/>
+        <property name="context-root" value="PruebaConceptoSeguridad"/>
+    </wb-module>
+</project-modules>

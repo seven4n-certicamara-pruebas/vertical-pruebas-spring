@@ -16,7 +16,7 @@ public final class Hello extends HttpServlet {
 
 
     /**
-     * Respond to a GET request for the content produced by
+     *  by
      * this servlet.
      *
      * @param request The servlet request we are processing
