@@ -1,0 +1,44 @@
+<html 
+ 	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles"
+	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:roo="urn:jsptagdir:/WEB-INF/tags" > 
+	
+	
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />  
+		
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+	</head>
+			
+
+   	<body class="tundra spring logoIdeam">		
+   		<div id="wrapper">
+		    <tiles:insertAttribute name="menu" ignore="true" />   
+	    	<div id="main">
+	    		<tiles:insertAttribute name="body" />
+	    		<div id="footer">				
+				  	<spring:url var="home" value="/" />
+				    <span><spring:message code="button.home"/></span>				    				    
+				    	<c:out value=" | "/>
+				    	<span>
+				    	<c:set var="userSiaSui" value="${sessionScope.SIASUI_USER_LOGGED_SESSION_IN}" scope="page"  />
+						<c:if test="${not empty userSiaSui}">
+						<a href="/SiaSui/home/invalidar">Cerrar Session</a>
+						
+						</c:if>	
+					
+													    				  
+						    <!--<spring:url var="logout" value="/static/j_spring_security_logout" /> !-->
+						    <!--<a href="${logout}">Cerrar Session</a>!-->
+						    <!--<spring:message code="security.logout" />!-->						    
+					    </span>					    
+						
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

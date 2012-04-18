@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+<definition extends="default" name="facturaElectronica/crearFacturaElectronica">
+<put-attribute name="body" value="/WEB-INF/views/facturaElectronica/crearFacturaElectronica.jsp"/>
+</definition>
+<!-- <definition extends="default" name="acueducto/aPreciDiariFuentSuper/results"> -->
+<!-- <put-attribute name="body" value="/WEB-INF/views/acueducto/aPreciDiariFuentSuper/results.jspx"/> -->
+<!-- </definition> -->
+</tiles-definitions>
