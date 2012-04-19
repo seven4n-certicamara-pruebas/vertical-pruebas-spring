@@ -1,0 +1,5 @@
+Pruebas Integración Spring
+
+El propósito de esta prueba de concepto es que un proyecto consuma los beans de otro. En este caso el proyecto PruebasIntegracionSpringMVC utiliza el bean BeanTest del proyecto PruebasIntegracionSpring. Para hacer esto el proyecto PruebasIntegracionSpring fue creado de forma normal colocando el archivo de configuración de beans dentro del classpath de este y luego exportando el proyecto como un JAR. El JAR fue adicionado al proyecto PruebasIntegracionSpringMVC. Este proyecto se corre en tomcat y al abrir la pagina principal solo aparece un Hello World, pero en la consola se imprime la cadena HELLLLOOOO, este mensaje es generado al llamar un método del BeanTest.
+
+*Al adicionar el JAR al proyecto PruebasIntegracionSpringMVC fue necesario modificar el ensamblado de despliegue del proyecto para que incluyera el JAR cuando se compila, para hacer esto: click derecho al proyecto -> properties -> Deployment Assembly y luego se adiciono el JAR a la carpeta WEB-INF/lib
