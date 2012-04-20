@@ -1,11 +1,13 @@
 package com.certicamara.certifactura.web.dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 
-public class FacturaElectronicaDominio {
+public class FacturaElectronicaDominio implements Serializable {
 	
+	private static final long serialVersionUID = 2895364451280142445L;
 	
 	private Integer idConsecutivo;
 	
@@ -17,7 +19,7 @@ public class FacturaElectronicaDominio {
 	
 	private String estado;
 	
-	private List<ProductoDominio> productos;
+	//private List<ProductoDominio> productos;
 
 	public Integer getIdConsecutivo() {
 		return idConsecutivo;
@@ -58,7 +60,8 @@ public class FacturaElectronicaDominio {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-
+	
+	/*
 	public List<ProductoDominio> getProductos() {
 		return productos;
 	}
@@ -66,7 +69,7 @@ public class FacturaElectronicaDominio {
 	public void setProductos(List<ProductoDominio> productos) {
 		this.productos = productos;
 	}
-	
+	*/
 	
 
 }
