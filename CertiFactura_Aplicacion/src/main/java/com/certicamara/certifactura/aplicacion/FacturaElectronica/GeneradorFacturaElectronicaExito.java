@@ -17,7 +17,7 @@ public class GeneradorFacturaElectronicaExito implements GeneradorFacturaElectro
 	@Override
 	public void crearFacturaElectronica( String cadenaJson )
 	{
-
+		
 		XStream xstream = new XStream( new JettisonMappedXmlDriver( ) );
 		xstream.alias( "FacturaElectronica", FacturaElectronica.class );
 		FacturaElectronica factura = ( FacturaElectronica ) xstream.fromXML( cadenaJson );
