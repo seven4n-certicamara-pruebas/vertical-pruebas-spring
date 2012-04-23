@@ -3,6 +3,13 @@ package com.certicamara.certifactura.web.dominio;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * CertiFactura
+ * Certicámara S.A.
+ * NotaDebitoElectronicaDominio
+ * @author Seven4N Ltda.
+ * Apr 23, 2012
+ */
 public class NotaDebitoElectronicaDominio {
 	
 	private FacturaElectronicaDominio facturaElectronica;

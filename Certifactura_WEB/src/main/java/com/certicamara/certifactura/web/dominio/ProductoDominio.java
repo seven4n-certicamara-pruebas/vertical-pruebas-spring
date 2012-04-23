@@ -2,6 +2,13 @@ package com.certicamara.certifactura.web.dominio;
 
 import java.math.BigDecimal;
 
+/**
+ * CertiFactura
+ * Certicámara S.A.
+ * ProductoDominio
+ * @author Seven4N Ltda.
+ * Apr 23, 2012
+ */
 public class ProductoDominio {
 	
 	private Integer idProducto;

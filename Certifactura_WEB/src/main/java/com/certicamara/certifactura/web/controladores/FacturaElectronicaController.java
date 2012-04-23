@@ -20,8 +20,16 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 
 
+
 /**
+ * CertiFactura
+ * Certicámara S.A.
+ * FacturaElectronicaController
+ * @author Seven4N Ltda.
+ * Apr 19, 2012
+ * 
  * Controlador de las peticiones de una factura electronica
+ * 
  */
 @Controller
 @RequestMapping("/factura/electronica/**")
@@ -47,11 +55,7 @@ public class FacturaElectronicaController {
 	@RequestMapping(value = "/factura/electronica", method = {RequestMethod.GET,RequestMethod.POST} )
     public String index(HttpServletRequest request, ModelMap modelMap) {
 		String contextPath = request.getServletContext( ).getContextPath( );
-		
-		
-		
-		System.out.println("Index Factura Electronica"+ contextPath);
-
+		modelMap.put( "contextPath", contextPath );
     	return "facturaElectronica/crearFacturaElectronica";
     }
 	
