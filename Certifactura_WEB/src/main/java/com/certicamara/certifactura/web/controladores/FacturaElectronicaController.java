@@ -1,5 +1,9 @@
 package com.certicamara.certifactura.web.controladores;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -54,8 +58,12 @@ public class FacturaElectronicaController {
 	 */
 	@RequestMapping(value = "/factura/electronica", method = {RequestMethod.GET,RequestMethod.POST} )
     public String index(HttpServletRequest request, ModelMap modelMap) {
+		SimpleDateFormat sf = new SimpleDateFormat( "MM/dd/yyyy" );		
 		String contextPath = request.getServletContext( ).getContextPath( );
+		Date fechaActual = Calendar.getInstance( ).getTime( );	
+		String fechaFormateada = sf.format( fechaActual );
 		modelMap.put( "contextPath", contextPath );
+		modelMap.put( "fechaActual", fechaFormateada );
     	return "facturaElectronica/crearFacturaElectronica";
     }
 	

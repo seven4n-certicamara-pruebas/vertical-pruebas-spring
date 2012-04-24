@@ -19,7 +19,19 @@
 
 
 
-<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery-1.7.2.js" />"></script>	
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery-1.7.2.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/json2.js" />"></script>
+<script type="text/javascript" src="<c:url value="//resources/js/jquery17/jquery.metadata.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.core.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.widget.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.mouse.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.button.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.draggable.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.position.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.resizable.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.datepicker.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.blockUI.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/certifactura/certifactura.js" />"></script>		
 
 <!--  
 <script type="text/javascript" src="/js/jquery17/jquery.metadata.js" > </script>

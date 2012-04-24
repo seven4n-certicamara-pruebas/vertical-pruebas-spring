@@ -32,10 +32,41 @@
 
 <script type="text/javascript">
 
-
+var certifactura = null;
 jQuery(document).ready(function() {
-	alert("jQuery");
+	crearDatePicker();
+	certifactura = new Certifactura();
 
 });
+
+
+
+//Crea el objeto datePicker al cargar la pagina
+function crearDatePicker(){
+	
+	jQuery.datepicker.setDefaults({dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+		dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+		monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']});
+	jQuery('#fecha').datepicker( "option", "dateFormat", 'yy-mm-dd');
+	jQuery('#fecha').datepicker({
+			onSelect: function(dateText, inst) { 
+				validarFecha();
+			}
+	});
+}
+
+
+
+//Validador de la fecha limite de publicación
+function validarFecha(){
+	var fecha = jQuery('#fecha').val();
+	var fechaActual = "${fechaActual}";	
+	if(fecha < fechaActual && fecha != ''){
+		certifactura.mostrarMensaje("La fecha seleccionada es menor a la fecha actual");
+		//alert("La fecha seleccionada es menor a la fecha actual");
+		jQuery('#fecha').val('');
+		return false;
+	}
+}
 
 </script>

@@ -5,18 +5,19 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">	
 	<display-name>CertifacturaApp</display-name>
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/spring/app-config.xml
 		</param-value>
-		
-		
 	</context-param>
+	
 	<filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
+    
 	<servlet>
 		<servlet-name>CertifacturaApp</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>	
@@ -26,15 +27,19 @@
 		</init-param>
 		 <load-on-startup>1</load-on-startup>		
 	</servlet>
+	
 	 <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>	
+    
 	<servlet-mapping>
 		<servlet-name>CertifacturaApp</servlet-name>
 		<url-pattern>/</url-pattern>
-	</servlet-mapping>			
-	<filter-mapping>
+	</servlet-mapping>
+				
+	<filter-mapping>	
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
 </web-app>
