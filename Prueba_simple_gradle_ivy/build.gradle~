@@ -1,0 +1,18 @@
+apply plugin:'java'
+version=0.1
+description='Ejemplo de uso de Gradle para Revista Software Guru'
+defaultTasks 'build', 'assemble'
+
+repositories {
+  ivy {
+        // URL can refer to a local directory
+        url "local"
+	layout 'pattern', {
+            artifact "[module]/[module]/[revision]/jars/[artifact].[ext]"
+            ivy "[module]/[module]/[revision]/ivys/ivy.xml"
+        }
+    }
+}
+dependencies {
+  testCompile 'junit:junit:4.7'
+}
