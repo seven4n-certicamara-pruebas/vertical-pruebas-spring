@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd">
+
+	<bean id="payloadMapping"
+		class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
+		<property name="endpointMap">
+			<map>
+				<entry key="{http://bk.org/memberservice/}MemberDetailsRequest"
+					value-ref="getMemberDetailsEndpoint" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="memberManager" class="com.mycompany.element.ws.service.MemberManagerImpl"></bean>
+	<bean id="getMemberDetailsEndpoint" class="com.mycompany.element.ws.endpoint.GetMemberDetailsEndpoint">
+		<property name="marshaller" ref="marshaller" />
+		<property name="unmarshaller" ref="unmarshaller" />
+		<property name="memberManager" ref="memberManager" />
+	</bean>
+
+	<bean id="MemberDetailsRequest"
+		class="org.springframework.ws.wsdl.wsdl11.SimpleWsdl11Definition">
+		<property name="wsdl" value="classpath:/memberservice.wsdl" />
+	</bean>
+
+
+	<bean id="marshaller" class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass"
+			value="com.mycompany.element.ws.message.MemberDetailsResponse" />
+	</bean>
+
+	<bean id="unmarshaller" class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass"
+			value="com.mycompany.element.ws.message.MemberDetailsRequest" />
+	</bean>
+</beans>

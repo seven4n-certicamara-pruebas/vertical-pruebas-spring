@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:ms="http://bk.org/memberservice/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="memberservice"
+	targetNamespace="http://bk.org/memberservice/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://bk.org/memberservice/" elementFormDefault="qualified">
+			<xsd:complexType name="MemberDetailType">
+				<xsd:sequence>
+					<xsd:element name="name" type="xsd:string" />
+					<xsd:element name="phone" type="xsd:string" />
+					<xsd:element name="city" type="xsd:string" />
+					<xsd:element name="state" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="MemberDetailsRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="id" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MemberDetailsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="memberdetail" type="ms:MemberDetailType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MemberDetailsRequest">
+		<wsdl:part element="ms:MemberDetailsRequest" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="MemberDetailsResponse">
+		<wsdl:part element="ms:MemberDetailsResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:portType name="memberservice">
+		<wsdl:operation name="GetMemberDetails">
+			<wsdl:input message="ms:MemberDetailsRequest" />
+			<wsdl:output message="ms:MemberDetailsResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="memberserviceSOAP" type="ms:memberservice">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GetMemberDetails">
+			<soap:operation soapAction="http://bk.org/memberservice/GetMemberDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="memberservice">
+		<wsdl:port binding="ms:memberserviceSOAP" name="memberserviceSOAP">
+			<soap:address location="http://localhost:8080/memberservice/services/MemberDetailsRequest" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
