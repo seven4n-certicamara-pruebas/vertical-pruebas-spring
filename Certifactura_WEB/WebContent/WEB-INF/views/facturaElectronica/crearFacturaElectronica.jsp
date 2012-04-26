@@ -13,21 +13,69 @@
 %>
 <form id="facturaElectronicaDominio" action="${contextPath}/factura/electronica/crear" method="post">
 
-	<input name="idConsecutivo" id="idConsecutivo" type="text" maxlength="20" />
-	
-	<input name="fecha" id="fecha" type="text" maxlength="20" />
-	
-	<input name="idEmisor" id="idEmisor" type="text" maxlength="20" />
-	
-	<input name="idReceptor" id="idReceptor" type="text" maxlength="20" />
-	
-	<input name="estado" id="estado" type="text" maxlength="20" />
-
- 	
-  	<input type="submit" id="publicar-tag-problematica" name="publicar-tag-problematica"
-  		   value="<fmt:message key="button.crear"/>" />
- 	
-
+	<fieldset>
+		<ol>
+			<li>
+				<strong id="idConsecutivo-form-crearfactura"><em>*</em> <fmt:message key="crearfacturaElectronica.formulario.idConsecutivo"/></strong>
+	 			<div>
+	 			<label>
+	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
+	 				<input name="idConsecutivo" id="idConsecutivo" type="text" maxlength="20" />
+	 			</label>
+	 			</div> 
+ 			</li>
+ 			
+			<li>
+				<strong id="fecha-form-crearfactura"><em>*</em> <fmt:message key="crearfacturaElectronica.formulario.fecha"/></strong>
+	 			<div>
+	 			<label>
+	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
+	 				<input name="fecha" id="fecha" type="text" maxlength="20" />
+	 			</label>
+	 			</div> 
+ 			</li>
+ 			
+			<li>
+				<strong id="idEmisor-form-crearfactura"><em>*</em> <fmt:message key="crearfacturaElectronica.formulario.idEmisor"/></strong>
+	 			<div>
+	 			<label>
+	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
+	 				<input name="idEmisor" id="idEmisor" type="text" maxlength="20" />
+	 			</label>
+	 			</div> 
+ 			</li>
+ 			
+			<li>
+				<strong id="idReceptor-form-crearfactura"><em>*</em> <fmt:message key="crearfacturaElectronica.formulario.idReceptor"/></strong>
+	 			<div>
+	 			<label>
+	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
+	 				<input name="idReceptor" id="idReceptor" type="text" maxlength="20" />
+	 			</label>
+	 			</div> 
+ 			</li>
+ 			
+			<li>
+				<strong id="estado-form-crearfactura"><em>*</em> <fmt:message key="crearfacturaElectronica.formulario.estado"/></strong>
+	 			<div>
+	 			<label>
+	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
+	 				<input name="estado" id="estado" type="text" maxlength="20" />
+	 			</label>
+	 			</div> 
+ 			</li>
+ 			
+ 			
+ 		</ol>
+ 			
+		<!--  BOTON DE ENVIAR PROBLEMATICA -->
+	    <strong>&nbsp;</strong>
+	    <div id="enviar">
+		<input type="submit" id="publicar-tag-problematica" name="publicar-tag-problematica"
+			   			value="<fmt:message key="crearfacturaElectronica.formulario.boton.crearFactura"/>" />
+	    </div>
+	    
+	</fieldset>
 </form>
 
 <script type="text/javascript">
