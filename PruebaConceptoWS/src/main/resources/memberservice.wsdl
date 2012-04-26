@@ -56,7 +56,7 @@
 	</wsdl:binding>
 	<wsdl:service name="memberservice">
 		<wsdl:port binding="ms:memberserviceSOAP" name="memberserviceSOAP">
-			<soap:address location="http://localhost:8080/memberservice/services/MemberDetailsRequest" />
+			<soap:address location="http://localhost:8080/PruebaConceptoWS/memberservice/services/MemberDetailsRequest" />
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>
