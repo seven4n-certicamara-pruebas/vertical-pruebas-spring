@@ -1,0 +1,23 @@
+=============================================================
+		SPRING EHCACHE
+=============================================================
+
+En la clase CachingTest.java podemos ver la definición de las
+3 pruebas unitarias que se ejecutarán:
+
+-Traer todos los mensajes.
+-Traer mensajes por Id. 
+-Limpiar cache
+
+Los llamados y operaciones con la cache quedan registrados 
+por consola.
+cuando ejecutamos el programa por la web, nos pararecera el 
+index que es un mensaje de Spring Eh Cache! en la url
+http://localhost:8080/spring-EhCache/ para crear un mensaje 
+nuevo podemos hacerlo entrando a 
+http://localhost:8080/spring-EhCache/message/add.html y para 
+revisar los mensajes por Id ya existentes lo hacemos
+ingresando a http://localhost:8080/spring-EhCache/message.html
+
+
+
