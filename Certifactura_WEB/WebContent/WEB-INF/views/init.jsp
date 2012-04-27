@@ -31,7 +31,9 @@
 <script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.resizable.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.ui.datepicker.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.blockUI.js" />"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/certifactura/certifactura.js" />"></script>		
+<script type="text/javascript" src="<c:url value="/resources/js/jquery17/jquery.validate.js"  />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/certifactura/certifactura.js" />"></script>
+<link media="all" type="text/css" href="<c:url value="/resources/css/init.css" />" rel="stylesheet">		
 
 <!--  
 <script type="text/javascript" src="/js/jquery17/jquery.metadata.js" > </script>

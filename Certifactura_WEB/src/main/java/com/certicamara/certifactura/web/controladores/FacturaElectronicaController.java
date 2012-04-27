@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.certicamara.certifactura.aplicacion.Comando;
 import com.certicamara.certifactura.aplicacion.GestorComandos;
 import com.certicamara.certifactura.aplicacion.FacturaElectronica.ComandoCrearFacturaElectronica;
+import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
 import com.certicamara.certifactura.web.dominio.FacturaElectronicaDominio;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
@@ -80,7 +81,7 @@ public class FacturaElectronicaController {
 	 */
 	@RequestMapping(value = "/factura/electronica/crear", method = {RequestMethod.GET,RequestMethod.POST} )
     public String crearFactura(
-    		@ModelAttribute("facturaElectronicaDominio") FacturaElectronicaDominio facturaElectronica,
+    		@ModelAttribute("facturaElectronicaDominio") FacturaElectronicaDTO facturaElectronica,
     	    BindingResult result, Model model,
     		HttpServletRequest request, 
     		HttpServletResponse response) {
@@ -88,7 +89,7 @@ public class FacturaElectronicaController {
 		try{
 			XStream xstream = new XStream(new JettisonMappedXmlDriver());	
 			xstream.setMode(XStream.NO_REFERENCES);
-			xstream.alias("FacturaElectronica", FacturaElectronicaDominio.class);
+			xstream.alias("FacturaElectronica", FacturaElectronicaDTO.class);
 			xml = xstream.toXML(facturaElectronica);
 			Comando comando = (Comando)new ComandoCrearFacturaElectronica(xml, "Exito");
 			gestorComandos.recibirComando(comando);

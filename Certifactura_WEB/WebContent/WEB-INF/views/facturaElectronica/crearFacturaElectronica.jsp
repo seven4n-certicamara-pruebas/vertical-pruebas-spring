@@ -11,8 +11,17 @@
     pageEncoding="UTF-8"%>    
 <%@ include file="../init.jsp" 
 %>
-<form id="facturaElectronicaDominio" action="${contextPath}/factura/electronica/crear" method="post">
 
+
+<!--  CONTENEDOR DE ERRORES -->
+ <div class="oculto" id="nameErrors">
+       <ul id="moreErrors">
+       </ul>
+ </div>
+
+
+
+<form id="facturaElectronicaDominio" action="${contextPath}/factura/electronica/crear" method="post">
 	<fieldset>
 		<ol>
 			<li>
@@ -20,7 +29,7 @@
 	 			<div>
 	 			<label>
 	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
-	 				<input name="idConsecutivo" id="idConsecutivo" type="text" maxlength="20" />
+	 				<input name="consecutivoIdentificador" id="idConsecutivo" type="text" maxlength="20" />
 	 			</label>
 	 			</div> 
  			</li>
@@ -30,7 +39,7 @@
 	 			<div>
 	 			<label>
 	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
-	 				<input name="fecha" id="fecha" type="text" maxlength="20" />
+	 				<input name="fecha" id="fechaFactura" type="text" maxlength="20" />
 	 			</label>
 	 			</div> 
  			</li>
@@ -40,7 +49,7 @@
 	 			<div>
 	 			<label>
 	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
-	 				<input name="idEmisor" id="idEmisor" type="text" maxlength="20" />
+	 				<input name="identificacionEmisor" id="idEmisor" type="text" maxlength="20" />
 	 			</label>
 	 			</div> 
  			</li>
@@ -50,28 +59,17 @@
 	 			<div>
 	 			<label>
 	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
-	 				<input name="idReceptor" id="idReceptor" type="text" maxlength="20" />
+	 				<input name="identificacionReceptor" id="idReceptor" type="text" maxlength="20" />
 	 			</label>
 	 			</div> 
- 			</li>
- 			
-			<li>
-				<strong id="estado-form-crearfactura"><em>*</em> <fmt:message key="crearfacturaElectronica.formulario.estado"/></strong>
-	 			<div>
-	 			<label>
-	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
-	 				<input name="estado" id="estado" type="text" maxlength="20" />
-	 			</label>
-	 			</div> 
- 			</li>
- 			
+ 			</li>			
  			
  		</ol>
  			
 		<!--  BOTON DE ENVIAR PROBLEMATICA -->
 	    <strong>&nbsp;</strong>
 	    <div id="enviar">
-		<input type="submit" id="publicar-tag-problematica" name="publicar-tag-problematica"
+		<input type="submit" id="publicar-tag-problematica" name="publicar-tag-problematica" class="botonEnviar"
 			   			value="<fmt:message key="crearfacturaElectronica.formulario.boton.crearFactura"/>" />
 	    </div>
 	    
@@ -83,9 +81,90 @@
 var certifactura = null;
 jQuery(document).ready(function() {
 	crearDatePicker();
-	certifactura = new Certifactura();
+	certifactura = new Certifactura();	
+	validate('<fmt:message key="erros-one-problematica"/>', '<fmt:message key="erros-more-part1-problematica"/>', '<fmt:message key="erros-more-part2-problematica"/>');
+	
+	
+	
+	
+	
 
 });
+
+
+//Validador de campos en el formulario crearProblematica
+function validate(msj1, msj2, msj3){	
+	var container = jQuery('#nameErrors');
+	var subContainer = jQuery('#moreErrors');
+	var claseError = "error";
+	var claseErrorCampos = "errorCampos";
+	var claseOculto = "oculto";
+	var validator = jQuery('#facturaElectronicaDominio').validate({		
+		 rules: {
+			 consecutivoIdentificador:{
+				 required:true
+				 /*maxlength: 2*/
+			}
+			,			 
+			fecha:{
+			 	required: true
+		 		/*minlength: 2,
+		 		maxlength: 256,
+		 		SpecialCharsValidatorTitles:true*/
+		 	}
+			,
+			identificacionEmisor:{
+			 	required: true
+		 		/*minlength: 2,
+		 		maxlength: 4000*/
+		  	}
+			,
+			identificacionReceptor:  {
+				required:true
+				/*
+		 		required: function(element) {
+		 			var documentTypeSelected = jQuery("input:checked[name=<portlet:namespace />fechaLimiteCheckbox]").val();
+		 			return (documentTypeSelected == 'on');
+		 		},
+		 		date: true*/
+		 	}			
+		 },
+		 messages: {
+			consecutivoIdentificador: '' ,
+			fecha: '',
+			identificacionEmisor: '',
+			identificacionReceptor: ''
+		 },
+		 highlight: function(element, errorClass) {
+		     	jQuery( element ).addClass( claseErrorCampos );
+		  },
+		unhighlight: function(element, errorClass) {
+				     jQuery( element ).removeClass( claseErrorCampos );
+		},  
+	 	invalidHandler: function(e, validator) {
+	 		/*jQuery.unblockUI();
+	 		jQuery.fn.MultiFile.reEnableEmpty();
+				var errors = validator.numberOfInvalids();
+				if (errors) {
+					var message = errors == 1
+						? msj1
+						: msj2 +" "+ errors + " "+ msj3;
+					subContainer.html('<li>'+message+'</li>');
+					container.addClass(claseError);
+					container.removeClass(claseOculto);
+				} else {
+					container.removeClass(claseError);
+					container.addClass(claseOculto);
+				}*/
+			},
+		 errorClass: "errorOculto",
+//		 errorElement: "div",
+		 errorLabelContainer: '#moreErrors',
+		 errorContainer: '#nameErrors'
+		});
+}
+
+
 
 
 
@@ -95,8 +174,8 @@ function crearDatePicker(){
 	jQuery.datepicker.setDefaults({dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
 		dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
 		monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']});
-	jQuery('#fecha').datepicker( "option", "dateFormat", 'yy-mm-dd');
-	jQuery('#fecha').datepicker({
+	jQuery('#fechaFactura').datepicker( "option", "dateFormat", 'yy-mm-dd');
+	jQuery('#fechaFactura').datepicker({
 			onSelect: function(dateText, inst) { 
 				validarFecha();
 			}
@@ -107,12 +186,12 @@ function crearDatePicker(){
 
 //Validador de la fecha limite de publicación
 function validarFecha(){
-	var fecha = jQuery('#fecha').val();
+	var fecha = jQuery('#fechaFactura').val();
 	var fechaActual = "${fechaActual}";	
 	if(fecha < fechaActual && fecha != ''){
 		certifactura.mostrarMensaje("La fecha seleccionada es menor a la fecha actual");
 		//alert("La fecha seleccionada es menor a la fecha actual");
-		jQuery('#fecha').val('');
+		jQuery('#fechaFactura').val('');
 		return false;
 	}
 }

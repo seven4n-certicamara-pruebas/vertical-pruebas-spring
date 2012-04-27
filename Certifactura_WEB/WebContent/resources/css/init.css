@@ -1,0 +1,81 @@
+input.botonEnviar,
+input[type="button"].botonEnviar,
+input[type="submit"].botonEnviar {
+	/*background: transparent url(../images/custom/boton.gif) no-repeat top left;*/
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	font-weight:normal;
+	text-align:center;
+	line-height:40px;
+	margin-top:5px;
+	font-size:18px;
+	display:block;
+	width:310px;
+	height:40px;
+	color:#ff0000;
+	border:none;
+	outline:none;
+	float: left;
+}
+
+form strong {
+	font-size:14px;
+	text-align:left;
+	margin-right:1%;
+	width:23%;
+	float:left;
+	color:#ff0000;
+	line-height: 100%;
+	margin-top: 8px;
+}
+
+form strong em {
+	color:#0067D9;
+}
+
+form ol li {
+	padding:9px 0;
+}
+
+fieldset, fieldset ol, fieldset ol li {
+	position:relative;
+	width:100%;	
+	float:left;	
+}
+	
+fieldset ol {
+	list-style:none;
+}
+
+
+form div label {
+	display:-moz-inline-stack; /* Fixes Firefox 3- Inline Block */
+	display:inline-block;
+	vertical-align:top;
+	position:relative; /* ie6 labels width compatibility */
+	text-align:left;
+	font-size:14px;
+	width:100%;
+	float:left;
+}
+
+fieldset {
+	border: 1px solid #BFBFBF;
+	padding: 8px;
+}
+
+
+input[type="text"].datepick,
+input.datepick {
+	background:transparent url(../images/custom/datepick.gif) no-repeat center right;
+}
+
+
+span.error span {
+	background-position:0 38px;
+}
+
+
+label.errorCampos { font-weight:bold; color:red; background-color:#FDF0F7; }
+
+
