@@ -13,16 +13,18 @@
 %>
 
 
-<!--  CONTENEDOR DE ERRORES -->
- <div class="oculto" id="nameErrors">
-       <ul id="moreErrors">
-       </ul>
- </div>
+
 
 
 
 <form id="facturaElectronicaDominio" action="${contextPath}/factura/electronica/crear" method="post">
 	<fieldset>
+		<!--  CONTENEDOR DE ERRORES -->
+	 	<div class="oculto" id="nameErrors">
+	       <ul id="moreErrors">
+	       </ul>
+	 	</div>	
+	
 		<ol>
 			<li>
 				<strong id="idConsecutivo-form-crearfactura"><em>*</em> <fmt:message key="crearfacturaElectronica.formulario.idConsecutivo"/></strong>
@@ -143,7 +145,7 @@ function validate(msj1, msj2, msj3){
 		},  
 	 	invalidHandler: function(e, validator) {
 	 		/*jQuery.unblockUI();
-	 		jQuery.fn.MultiFile.reEnableEmpty();
+	 		jQuery.fn.MultiFile.reEnableEmpty();*/
 				var errors = validator.numberOfInvalids();
 				if (errors) {
 					var message = errors == 1
@@ -155,7 +157,7 @@ function validate(msj1, msj2, msj3){
 				} else {
 					container.removeClass(claseError);
 					container.addClass(claseOculto);
-				}*/
+				}
 			},
 		 errorClass: "errorOculto",
 //		 errorElement: "div",

@@ -8,7 +8,7 @@ function Certifactura(){
 				message: mensaje,
 				css: { 
 					border:'none', padding:'15px', size:'12.0pt',
-					backgroundColor:'#05d', color:'#fff',
+					backgroundColor:'#ff0000', color:'#fff',
 					opacity:'.8','-webkit-border-radius': '10px','-moz-border-radius': '10px'
 				}
 			});
