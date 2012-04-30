@@ -39,7 +39,7 @@
 	 			<div>
 	 			<label>
 	 				<!--<a href="#" class="masInformacion" title='<liferay-ui:message key="crearProblematica.tooltip.titulo"/>'><liferay-ui:message key="mas.informacion.simbolo"/></a>-->
-	 				<input name="fecha" id="fechaFactura" type="text" maxlength="20" />
+	 				<input name="fecha" id="fechaFactura" class="datepick" type="text" maxlength="20" />
 	 			</label>
 	 			</div> 
  			</li>

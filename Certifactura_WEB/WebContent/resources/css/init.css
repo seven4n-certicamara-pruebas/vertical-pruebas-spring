@@ -1,3 +1,5 @@
+@import url("jquery-ui.css");
+
 input.botonEnviar,
 input[type="button"].botonEnviar,
 input[type="submit"].botonEnviar {
@@ -67,7 +69,14 @@ fieldset {
 
 input[type="text"].datepick,
 input.datepick {
-	background:transparent url(../images/custom/datepick.gif) no-repeat center right;
+	background:transparent url(../images/datepick.gif) no-repeat center right;
+}
+
+input[type=text], input[type=password], input[type=file], input[type=button], input[type=submit], input.password, input.text, select, textarea { 
+	background:transparent url(../images/inputBack.gif) repeat-x top left;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-shadow:none;
+	/*width:98%;*/
 }
 
 
