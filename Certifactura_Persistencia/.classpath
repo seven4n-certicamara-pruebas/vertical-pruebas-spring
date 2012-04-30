@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/DDDCertiFactura.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/DefinicionesClientesCertifactura.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/DTOsCertiFactura.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/junit-4.8.2.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/mongo-2.7.3.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/mongo-java-driver-2.5.2.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-aop-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-asm-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-beans-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-context-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-core-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-data-commons-core-1.0.0.RC1.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-data-document-core-1.0.0.M2.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-data-mongodb-1.0.0.M2.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-data-mongodb-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-data-mongodb-cross-store-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-data-mongodb-log4j-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-expression-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/spring-tx-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/standard.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
