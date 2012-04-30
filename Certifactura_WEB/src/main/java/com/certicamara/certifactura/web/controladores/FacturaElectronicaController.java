@@ -20,9 +20,7 @@ import com.certicamara.certifactura.aplicacion.Comando;
 import com.certicamara.certifactura.aplicacion.GestorComandos;
 import com.certicamara.certifactura.aplicacion.FacturaElectronica.ComandoCrearFacturaElectronica;
 import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
-import com.certicamara.certifactura.web.dominio.FacturaElectronicaDominio;
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 
@@ -81,17 +79,14 @@ public class FacturaElectronicaController {
 	 */
 	@RequestMapping(value = "/factura/electronica/crear", method = {RequestMethod.GET,RequestMethod.POST} )
     public String crearFactura(
-    		@ModelAttribute("facturaElectronicaDominio") FacturaElectronicaDTO facturaElectronica,
+    		@ModelAttribute("facturaElectronicaDominio") FacturaElectronicaDTO facturaCanonicaDTO,
     	    BindingResult result, Model model,
     		HttpServletRequest request, 
     		HttpServletResponse response) {
-		String xml = null;
 		try{
-			XStream xstream = new XStream(new JettisonMappedXmlDriver());	
-			xstream.setMode(XStream.NO_REFERENCES);
-			xstream.alias("FacturaElectronica", FacturaElectronicaDTO.class);
-			xml = xstream.toXML(facturaElectronica);
-			Comando comando = (Comando)new ComandoCrearFacturaElectronica(xml, "Exito");
+			ObjectMapper mapper = new ObjectMapper();
+			String cadenaJsonFacturaCanonica = mapper.writeValueAsString( facturaCanonicaDTO );
+			Comando comando = (Comando)new ComandoCrearFacturaElectronica(cadenaJsonFacturaCanonica, "Exito");
 			gestorComandos.recibirComando(comando);
 		}catch( Exception ex ){
 			ex.printStackTrace();
