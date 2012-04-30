@@ -8,7 +8,7 @@ package com.certicamara.certifactura.dto;
  * @author Seven4N Ltda.
  * Apr 30, 2012
  */
-public class FacturaElectronicaParticularDTO
+public class ParejaDTO
 {
 	
 	private String atributo;

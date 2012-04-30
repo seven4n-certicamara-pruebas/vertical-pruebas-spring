@@ -5,7 +5,7 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
-import com.certicamara.certifactura.dto.FacturaElectronicaParticularDTO;
+import com.certicamara.certifactura.dto.ParejaDTO;
 
 /**
  * CertiFactura
@@ -26,7 +26,7 @@ public interface IServiciosFacturaElectronica
 	 * @param facturaElectronica DTO de factura electronica canonica
 	 * @param mapa Mapa de valores que conforman la factura para cada cliente, es decir los atributos que estan especificados para cada cliente
 	 */
-	void crearFacturaElectronica(@WebParam( name = "idEmisor") String idEmisor, @WebParam( name = "facturaElectronicaCanonica") FacturaElectronicaDTO facturaElectronica, @WebParam( name = "camposAdicionales") FacturaElectronicaParticularDTO facturaParticular);
+	void crearFacturaElectronica(@WebParam( name = "idEmisor") String idEmisor, @WebParam( name = "facturaElectronicaCanonica") FacturaElectronicaDTO facturaElectronica, @WebParam( name = "camposAdicionales") ParejaDTO parejaFacturaParticular);
 	
 	/**
 	 * Servicio que entrega una factura electronica para cada emisor  
