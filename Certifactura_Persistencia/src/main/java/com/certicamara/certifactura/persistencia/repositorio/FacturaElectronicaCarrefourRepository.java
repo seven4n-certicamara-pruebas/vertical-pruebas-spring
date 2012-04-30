@@ -11,6 +11,7 @@ import com.certicamara.certifactura.persistencia.mappers.FacturaElectronicaCarre
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 
 
 public class FacturaElectronicaCarrefourRepository implements IRepositorio< FacturaElectronicaCarrefourDTO, FacturaElectronicaCarrefourDBO >
@@ -69,12 +70,12 @@ public class FacturaElectronicaCarrefourRepository implements IRepositorio< Fact
 	@Override
 	public FacturaElectronicaCarrefourDTO buscar( FacturaElectronicaCarrefourDBO llave ) throws Exception
 	{			
-		FacturaElectronicaCarrefourDBO facturaElectronicaCarrefourDBO;
+		DBObject facturaElectronicaCarrefourDBO;
 		BasicDBObject query = new BasicDBObject();
 		query.put("consecutivoIdentificador", llave.get( "consecutivoIdentificador" ));
 		DBCursor cur = getCollection( collectionName ).find(query);
 		if (cur.hasNext( )){
-			facturaElectronicaCarrefourDBO=(FacturaElectronicaCarrefourDBO)cur.next( );
+			facturaElectronicaCarrefourDBO=cur.next( );
 		}
 		else{
 			throw new Exception("No se encontro la factura electrónica" );

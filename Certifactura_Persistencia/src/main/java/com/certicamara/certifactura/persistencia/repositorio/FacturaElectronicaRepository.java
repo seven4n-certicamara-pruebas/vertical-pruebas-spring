@@ -10,6 +10,7 @@ import com.certicamara.certifactura.persistencia.mappers.FacturaElectronicaDataM
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 
 
 public class FacturaElectronicaRepository implements IRepositorio< FacturaElectronicaDTO, FacturaElectronicaCanonicaDBO >
@@ -54,12 +55,12 @@ public class FacturaElectronicaRepository implements IRepositorio< FacturaElectr
 	@Override
 	public FacturaElectronicaDTO buscar( FacturaElectronicaCanonicaDBO llave ) throws Exception
 	{			
-		FacturaElectronicaCanonicaDBO facturaElectronicaCanonicaDBO;
+		DBObject facturaElectronicaCanonicaDBO;
 		BasicDBObject query = new BasicDBObject();
 		query.put("consecutivoIdentificador", llave.get( "consecutivoIdentificador" ));
 		DBCursor cur = getCollection( collectionName ).find(query);
 		if (cur.hasNext( )){
-			facturaElectronicaCanonicaDBO=(FacturaElectronicaCanonicaDBO)cur.next( );
+			facturaElectronicaCanonicaDBO=cur.next();
 		}
 		else{
 			throw new Exception("No se encontro la factura electrónica" );
