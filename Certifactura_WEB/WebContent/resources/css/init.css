@@ -1,3 +1,5 @@
+@import url("jquery-ui.css");
+
 input.botonEnviar,
 input[type="button"].botonEnviar,
 input[type="submit"].botonEnviar {
@@ -67,15 +69,42 @@ fieldset {
 
 input[type="text"].datepick,
 input.datepick {
-	background:transparent url(../images/custom/datepick.gif) no-repeat center right;
+	background:transparent url(../images/datepick.gif) no-repeat center right;
 }
+
+input[type=text], input[type=password], input[type=file], input[type=button], input[type=submit], input.password, input.text, select, textarea { 
+	background:transparent url(../images/inputBack.gif) repeat-x top left;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-shadow:none;
+	/*width:98%;*/
+}
+
+.error {
+	background:#FDF0F7 url(../images/warning.png) no-repeat 5px 5px;
+	border:1px solid #FF8888;
+	padding:10px 5px 10px 45px;
+	text-align:left;
+	font-weight:bold;
+	line-height:140%;
+	color:#333333;
+	margin:10px 0;
+	float:left;
+	width: 560px;
+	font-size: 12px;
+	}
 
 
 span.error span {
 	background-position:0 38px;
 }
 
+label.errorCampos input, label.errorCampos select,label.errorCampos textarea,
+input.errorCampos,select.errorCampos, textarea.errorCampos { border:1px solid red; background-color:#FDF0F7; }
 
 label.errorCampos { font-weight:bold; color:red; background-color:#FDF0F7; }
+
+.oculto {
+	display:none;
+}
 
 

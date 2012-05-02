@@ -38,7 +38,7 @@ public class ServiciosFacturaImplementacion implements IServiciosFacturaElectron
 			Comando comando = (Comando)new ComandoCrearFacturaElectronica(cadenaJsonFacturaCanonica, "Exito");			
 			gestorComandos.recibirComando(comando);
 		}catch( Exception ex ){
-			
+			ex.printStackTrace( );
 		}
 		
 	}
