@@ -2,7 +2,7 @@ package com.certicamara.certifactura.persistencia.repositorio;
 
 
 
-import org.springframework.data.document.mongodb.MongoOperations;
+import org.springframework.data.mongodb.core.MongoOperations;
 
 import com.certicamara.certifactura.dominio.clientes.facturaElectronica.dtos.FacturaElectronicaCarrefourDTO;
 import com.certicamara.certifactura.persistencia.contrato.IRepositorio;
