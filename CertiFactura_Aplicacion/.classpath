@@ -5,26 +5,22 @@
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/main/resource"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-asm-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-beans-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-context-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-core-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-expression-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-assistedinject-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-grapher-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-jmx-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-jndi-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-multibindings-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-persist-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-servlet-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-spring-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-struts2-plugin-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-throwingproviders-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/javax.inject-1.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/jettison-1.3.1.jar"/>
-	<classpathentry kind="lib" path="lib/xstream-1.4.2.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_GUICE/aopalliance.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_GUICE/guice-3.0.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_GUICE/guice-assistedinject-3.0.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_GUICE/guice-spring-3.0.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_GUICE/javax.inject.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.asm-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.beans-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.context-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.core-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.expression-3.1.1.RELEASE.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CertiFactura_Dominio"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CertiFactura_Infraestructura"/>
+	<classpathentry kind="var" path="CERTIFACTURA_JACKSON/jackson-annotations-2.0.0.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_JACKSON/jackson-core-2.0.0.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_JACKSON/jackson-databind-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/CertiFactura_Lib/lib/certifactura/DefinicionesClientesCertifactura.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

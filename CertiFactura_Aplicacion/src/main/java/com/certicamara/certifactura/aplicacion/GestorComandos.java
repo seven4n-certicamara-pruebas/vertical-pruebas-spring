@@ -1,6 +1,8 @@
 package com.certicamara.certifactura.aplicacion;
 
-import com.certicamara.certifactura.aplicacion.FacturaElectronica.ComandoCrearFacturaElectronica;
+import com.certicamara.certifactura.aplicacion.comandos.IComandoDTO;
+import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionCertiFactura;
+
 
 /**
  * CertiFactura
@@ -12,13 +14,8 @@ import com.certicamara.certifactura.aplicacion.FacturaElectronica.ComandoCrearFa
 public class GestorComandos
 {
 
-	public void recibirComando( Comando comando )
+	public void recibirComando( IComandoDTO comando ) throws ExcepcionCertiFactura
 	{
-
-		if ( comando instanceof ComandoCrearFacturaElectronica )
-		{
-			comando.ejecutar( );
-		}
+		comando.ejecutar( );
 	}
-
 }
