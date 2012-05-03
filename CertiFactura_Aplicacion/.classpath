@@ -5,26 +5,5 @@
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/main/resource"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-asm-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-beans-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-context-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-core-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/spring-expression-3.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-assistedinject-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-grapher-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-jmx-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-jndi-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-multibindings-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-persist-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-servlet-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-spring-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-struts2-plugin-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/guice-throwingproviders-3.0.jar"/>
-	<classpathentry kind="lib" path="/home/steven/Dev/CertiFactura/librerias proyecto spring normal/guice-3.0/javax.inject-1.jar"/>
-	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/jettison-1.3.1.jar"/>
-	<classpathentry kind="lib" path="lib/xstream-1.4.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
