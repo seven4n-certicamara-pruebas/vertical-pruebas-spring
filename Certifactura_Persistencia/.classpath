@@ -2,9 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/DDDCertiFactura.jar"/>
-	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/DefinicionesClientesCertifactura.jar"/>
-	<classpathentry kind="lib" path="/home/hansen/Documents/PruebasConcepto/Librerias Certifactura_persistencia/DTOsCertiFactura.jar"/>
 	<classpathentry kind="lib" path="/home/hansen/springsource/JarPlugins/Librerias_Persistencia/spring-data-mongo-1.0.1.RELEASE/dist/spring-data-mongodb-1.0.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/home/hansen/springsource/JarPlugins/Librerias_Persistencia/spring-data-mongo-1.0.1.RELEASE/dist/spring-data-mongodb-cross-store-1.0.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/home/hansen/springsource/JarPlugins/Librerias_Persistencia/spring-data-mongo-1.0.1.RELEASE/dist/spring-data-mongodb-log4j-1.0.1.RELEASE.jar"/>
