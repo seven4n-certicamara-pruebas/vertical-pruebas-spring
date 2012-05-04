@@ -35,11 +35,11 @@ public class RepositorioFacturaElectronica implements IRepositorio< FacturaElect
 		}
 		catch ( UnknownHostException e )
 		{
-			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronicaCarrefour.RepositorioFacturaElectronicaCarrefour "+e.getMessage( ),e );
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronica.RepositorioFacturaElectronica "+e.getMessage( ),e );
 		}
 		catch ( MongoException e )
 		{
-			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronicaCarrefour.RepositorioFacturaElectronicaCarrefour "+e.getMessage( ),e );
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronica.RepositorioFacturaElectronica "+e.getMessage( ),e );
 		}
 		
 	}
@@ -49,32 +49,54 @@ public class RepositorioFacturaElectronica implements IRepositorio< FacturaElect
 	}
 
 	@Override
-	public void guardar( FacturaElectronicaDTO facturaElectronicaDTO )
+	public void guardar( FacturaElectronicaDTO facturaElectronicaDTO ) throws ExcepcionTecnica
 	{
-		mongoOperations.save( facturaElectronicaDTO, collectionName);		
-	}
-
-	@Override
-	public void actualizar( FacturaElectronicaDTO facturaElectronicaDTO ) throws Exception
-	{		
-		if (buscar(new FacturaElectronicaVO( facturaElectronicaDTO.getId( ) ))==null){
-			throw new Exception( "No se encontro la factura electronica" );
+		try
+		{
+			buscar(new FacturaElectronicaVO( facturaElectronicaDTO.getId( ) ));
+			throw new ExcepcionTecnica( "En RepositorioFacturaElectronica.guardar: Ya existe una factura electrónica con el mismo Id ",new Exception( ) );
 		}
-		guardar( facturaElectronicaDTO );
+		catch ( ExcepcionTecnica e )
+		{
+			try{
+				mongoOperations.save( facturaElectronicaDTO, collectionName);	
+			}
+			catch(RuntimeException ex){
+				throw new ExcepcionTecnica( ex.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronica.guardar "+ex.getMessage( ), ex);
+			}
+		}
 	}
 
 	@Override
-	public FacturaElectronicaDTO buscar( FacturaElectronicaVO facturaElectronicaVO ) throws Exception
+	public void actualizar( FacturaElectronicaDTO facturaElectronicaDTO ) throws ExcepcionTecnica
 	{		
-		FacturaElectronicaDTO facturaElectronicaDTO = mongoOperations.findById( facturaElectronicaVO.getId( ), FacturaElectronicaDTO.class, collectionName );		
+		try
+		{
+			buscar(new FacturaElectronicaVO( facturaElectronicaDTO.getId( ) ));
+			guardar( facturaElectronicaDTO );
+		}
+		catch ( ExcepcionTecnica e )
+		{
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronica.actualizar: No se encontró la factura electrónica "+e.getMessage( ),e );
+		}
+		
+	}
+
+	@Override
+	public FacturaElectronicaDTO buscar( FacturaElectronicaVO facturaElectronicaVO ) throws ExcepcionTecnica
+	{		
+		FacturaElectronicaDTO facturaElectronicaDTO = null;
+		try{
+			facturaElectronicaDTO = mongoOperations.findById( facturaElectronicaVO.getId( ), FacturaElectronicaDTO.class, collectionName );
+		}
+		catch(RuntimeException e){
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronica.buscar "+e.getMessage( ), e);
+		}
+			
 		if (facturaElectronicaDTO==null){
-			throw new Exception( "No se encontro la factura electronica" );
+			throw new ExcepcionTecnica( "En RepositorioFacturaElectronica.buscar: No se encontró la factura electrónica ", new Exception( ));
 		}
 		return facturaElectronicaDTO;
 	}
-
-		
-	
-	
 	
 }

@@ -50,26 +50,51 @@ public class RepositorioFacturaElectronicaCarrefour implements IRepositorio< Fac
 	}
 
 	@Override
-	public void guardar( FacturaElectronicaCarrefourDTO facturaElectronicaCarrefourDTO )
+	public void guardar( FacturaElectronicaCarrefourDTO facturaElectronicaCarrefourDTO ) throws ExcepcionTecnica
 	{
-		mongoOperations.save( facturaElectronicaCarrefourDTO, collectionName);		
-	}
-
-	@Override
-	public void actualizar( FacturaElectronicaCarrefourDTO facturaElectronicaCarrefourDTO ) throws Exception
-	{		
-		if (buscar(new FacturaElectronicaCarrefourVO( facturaElectronicaCarrefourDTO.getId( ) ))==null){
-			throw new Exception( "No se encontro la factura electronica" );
+		try
+		{
+			buscar(new FacturaElectronicaCarrefourVO( facturaElectronicaCarrefourDTO.getId( ) ));
+			throw new ExcepcionTecnica( "En RepositorioFacturaElectronicaCarrefour.guardar: Ya existe una factura electrónica con el mismo Id ",new Exception( ) );
 		}
-		guardar( facturaElectronicaCarrefourDTO );
+		catch ( ExcepcionTecnica e )
+		{
+			try{
+				mongoOperations.save( facturaElectronicaCarrefourDTO, collectionName);
+			}
+			catch(RuntimeException ex){
+				throw new ExcepcionTecnica( ex.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronicaCarrefour.guardar "+ex.getMessage( ), ex);
+			}
+		}
 	}
 
 	@Override
-	public FacturaElectronicaCarrefourDTO buscar( FacturaElectronicaCarrefourVO llave ) throws Exception
+	public void actualizar( FacturaElectronicaCarrefourDTO facturaElectronicaCarrefourDTO ) throws ExcepcionTecnica
 	{		
-		FacturaElectronicaCarrefourDTO facturaElectronicaDTO = mongoOperations.findById( llave.getId( ), FacturaElectronicaCarrefourDTO.class, collectionName );		
+		try
+		{
+			buscar(new FacturaElectronicaCarrefourVO( facturaElectronicaCarrefourDTO.getId( ) ));
+			guardar( facturaElectronicaCarrefourDTO );
+		}
+		catch ( ExcepcionTecnica e )
+		{
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronicaCarrefour.actualizar: No se encontró la factura electrónica "+e.getMessage( ),e );
+		}
+		
+	}
+
+	@Override
+	public FacturaElectronicaCarrefourDTO buscar( FacturaElectronicaCarrefourVO llave ) throws ExcepcionTecnica
+	{		
+		FacturaElectronicaCarrefourDTO facturaElectronicaDTO = null;
+		try{
+			facturaElectronicaDTO = mongoOperations.findById( llave.getId( ), FacturaElectronicaCarrefourDTO.class, collectionName );
+		}
+		catch(RuntimeException e){
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" en RepositorioFacturaElectronicaCarrefour.buscar "+e.getMessage( ), e);
+		}
 		if (facturaElectronicaDTO==null){
-			throw new Exception( "No se encontro la factura electronica" );
+			throw new ExcepcionTecnica( "En RepositorioFacturaElectronicaCarrefour.buscar: No se encontró la factura electrónica ", new Exception( ));
 		}
 		return facturaElectronicaDTO;
 	}
