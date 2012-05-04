@@ -45,8 +45,8 @@ public class prueba
     	facturaElectronicaDTO.setIdentificacionEmisor("3");
     	facturaElectronicaDTO.setIdentificacionReceptor("4");
     	
-    	repositorioFacturaElectronica.actualizar( facturaElectronicaDTO );
-    	repositorioFacturaElectronicaCarrefour.actualizar( facturaElectronicaCarrefourDTO );
+    	repositorioFacturaElectronica.guardar( facturaElectronicaDTO );
+    	repositorioFacturaElectronicaCarrefour.guardar( facturaElectronicaCarrefourDTO );
     	
     	
 

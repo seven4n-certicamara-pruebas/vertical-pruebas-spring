@@ -3,6 +3,11 @@ package com.certicamara.certifactura.dominio.conceptos.facturaElectronica;
 import java.lang.reflect.Field;
 import java.util.Date;
 
+import com.certicamara.certifactura.dominio.conceptos.facturaElectronica.repositorios.RepositorioFacturaElectronica;
+import com.certicamara.certifactura.dominio.ddd.AggregateRoot;
+import com.certicamara.certifactura.dominio.ddd.Entity;
+import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
+
 /**
  * CertiFactura
  * Certicámara S.A.
@@ -10,14 +15,13 @@ import java.util.Date;
  * @author Seven4N Ltda.
  * Apr 20, 2012
  */
-public class FacturaElectronica implements IFacturaElectronica
+public class FacturaElectronica extends AggregateRoot implements IFacturaElectronica
 {
 
 
 	//------------------------------
 	//        Atributos
 	//------------------------------
-
 	private String consecutivoIdentificador;
 	private Date fecha;
 	private String identificacionEmisor;
@@ -132,10 +136,9 @@ public class FacturaElectronica implements IFacturaElectronica
 	@Override
 	public void crearFacturaElectronica( )
 	{
-		System.out.println("crearFacturaElectronica en FacturaElectronica");
-		
-		System.out.println(this.toString( ));
-		// TODO Auto-generated method stub
+		System.out.println("EN FacturaElectronica.crearFacturaElectronica()");
+		RepositorioFacturaElectronica repositorioFacturaElectronica = new RepositorioFacturaElectronica( );
+		repositorioFacturaElectronica.guardar( this.obtenerDTO( ) );
 
 	}
 
@@ -210,5 +213,27 @@ public class FacturaElectronica implements IFacturaElectronica
 		}
 		// TODO Auto-generated method stub
 		return super.toString( );
+	}
+	
+	public FacturaElectronicaDTO obtenerDTO(){
+		FacturaElectronicaDTO facturaElectronicaDTO = new FacturaElectronicaDTO( );
+		facturaElectronicaDTO.setConsecutivoIdentificador( this.getConsecutivoIdentificador( ) );
+		facturaElectronicaDTO.setEstado( this.getEstado( ) );
+		facturaElectronicaDTO.setFecha( this.getFecha( ) );
+		facturaElectronicaDTO.setId( this.getId( ) );
+		facturaElectronicaDTO.setIdentificacionEmisor( this.getIdentificacionEmisor( ) );
+		facturaElectronicaDTO.setIdentificacionReceptor( this.getIdentificacionReceptor( ) );
+		
+		return facturaElectronicaDTO;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.certicamara.certifactura.dominio.ddd.Entity#isSameEntityAs(com.certicamara.certifactura.dominio.ddd.Entity)
+	 */
+	@Override
+	public boolean isSameEntityAs( Entity Entity )
+	{
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

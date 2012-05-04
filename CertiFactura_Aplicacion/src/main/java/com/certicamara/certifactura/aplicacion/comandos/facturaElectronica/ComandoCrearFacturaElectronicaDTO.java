@@ -88,14 +88,14 @@ public class ComandoCrearFacturaElectronicaDTO implements IComandoDTO
 	{
 		//Llamar la fachada del cliente
 		Injector injector = Guice.createInjector( new ModuloComandoCrearFacturaElectronicaCliente( ( this.getNombreCliente( ) ) ) );
-		IComandoCrearFacturaElectronica fachadaFacturaElectronicaCliente = injector.getInstance( IComandoCrearFacturaElectronica.class );
+		IComandoCrearFacturaElectronica comandoCrearFacturaElectronicaCliente = injector.getInstance( IComandoCrearFacturaElectronica.class );
 		
 		//Crear Objetos de json, y pasarselos a la fachada
 		FacturaElectronicaDTO facturaElectronicaCanonica = transformarJsonDto( this.cadenaJsonFacturaCanonica);
 		HashMap< String, Object > mapaFacturaElectronicaCliente = transformarJsonMapa( this.cadenaJsonFacturaCliente);
 		
 		//llamar el servicio de la fachada
-		fachadaFacturaElectronicaCliente.crearFacturaElectronica( facturaElectronicaCanonica, mapaFacturaElectronicaCliente);
+		comandoCrearFacturaElectronicaCliente.crearFacturaElectronica( facturaElectronicaCanonica, mapaFacturaElectronicaCliente);
 	}
 	
 	private FacturaElectronicaDTO transformarJsonDto(String jsonFacturaElectronicaCanonica) throws ExcepcionTecnica{

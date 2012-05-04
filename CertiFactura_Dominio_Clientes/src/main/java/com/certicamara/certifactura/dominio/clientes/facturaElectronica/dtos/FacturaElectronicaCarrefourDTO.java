@@ -3,6 +3,7 @@ package com.certicamara.certifactura.dominio.clientes.facturaElectronica.dtos;
 import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
 
 
+
 /**
  * CertiFactura
  * Certicámara S.A.
@@ -15,6 +16,9 @@ public class FacturaElectronicaCarrefourDTO {
 	private FacturaElectronicaDTO facturaCanonica;
 
 	private String contenedor;
+	
+	private String id;
+	
 
 	public String getContenedor( )
 	{
@@ -34,6 +38,16 @@ public class FacturaElectronicaCarrefourDTO {
 	public void setFacturaCanonica( FacturaElectronicaDTO facturaCanonica )
 	{
 		this.facturaCanonica = facturaCanonica;
+	}
+
+	public String getId( )
+	{
+		return id;
+	}
+
+	public void setId( String id )
+	{
+		this.id = id;
 	}
 
 

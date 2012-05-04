@@ -16,11 +16,12 @@ public class FacturaElectronicaDTO
 	//------------------------------
 	//        Atributos
 	//------------------------------
-
+	private String id;	
 	private String consecutivoIdentificador;
 	private Date fecha;
 	private String identificacionEmisor;
 	private String identificacionReceptor;
+	
 	//private Collection<Productos> productos;
 	private String estado;
 	//private Collection<NotaCreditoElectronica> notasDebito;
@@ -123,17 +124,15 @@ public class FacturaElectronicaDTO
 	{
 		this.estado = estado;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString( )
+	public String getId( )
 	{
-		return "FacturaElectronicaDTO [consecutivoIdentificador=" + consecutivoIdentificador + ", fecha=" + fecha + ", identificacionEmisor=" + identificacionEmisor + ", identificacionReceptor=" + identificacionReceptor + ", estado=" + estado + "]";
+		return id;
 	}
-	
-	
+
+	public void setId( String id )
+	{
+		this.id = id;
+	}
 	//------------------------------
 	//       Métodos Privados
 	//------------------------------
