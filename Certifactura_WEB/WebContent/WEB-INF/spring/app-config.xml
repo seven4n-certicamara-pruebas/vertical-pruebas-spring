@@ -15,9 +15,9 @@
   
     <beans:import resource="classpath:com/certicamara/certifactura/aplicacion/aplication-context.xml"/>
 
-    <!-- Importing Spring Security Settings  -->
+    <!-- Importing Spring Security Settings  
 	<beans:import resource="../security/applicationContext-security.xml"/>
-	
+	-->
   
   
   	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->

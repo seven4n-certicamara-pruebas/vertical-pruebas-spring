@@ -3,6 +3,7 @@ package com.certicamara.certifactura.web.controladores;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,9 +17,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.certicamara.certifactura.aplicacion.Comando;
 import com.certicamara.certifactura.aplicacion.GestorComandos;
-import com.certicamara.certifactura.aplicacion.FacturaElectronica.ComandoCrearFacturaElectronica;
+import com.certicamara.certifactura.aplicacion.comandos.IComandoDTO;
+import com.certicamara.certifactura.aplicacion.comandos.facturaElectronica.ComandoCrearFacturaElectronicaDTO;
 import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -85,8 +86,11 @@ public class FacturaElectronicaController {
     		HttpServletResponse response) {
 		try{
 			ObjectMapper mapper = new ObjectMapper();
+			HashMap< String, Object > mapaFacturaCliente = new HashMap< String, Object >( );
+            mapaFacturaCliente.put( "contenedor", "Contenedor192932" );
+            String cadenaJsonFacturaCliente = mapper.writeValueAsString( mapaFacturaCliente );			
 			String cadenaJsonFacturaCanonica = mapper.writeValueAsString( facturaCanonicaDTO );
-			Comando comando = (Comando)new ComandoCrearFacturaElectronica(cadenaJsonFacturaCanonica, "Exito");
+			IComandoDTO comando = new ComandoCrearFacturaElectronicaDTO(cadenaJsonFacturaCanonica, cadenaJsonFacturaCliente, "Carrefour" );
 			gestorComandos.recibirComando(comando);
 		}catch( Exception ex ){
 			ex.printStackTrace();

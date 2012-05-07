@@ -3,6 +3,10 @@
 	<name>Certifactura_WEB</name>
 	<comment></comment>
 	<projects>
+		<project>CertiFactura_Aplicacion</project>
+		<project>CertiFactura_Infraestructura</project>
+		<project>CertiFactura_Dominio_Clientes</project>
+		<project>CertiFactura_Dominio</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
