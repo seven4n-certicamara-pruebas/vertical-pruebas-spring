@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Certifactura_WEB</name>
+	<name>CertiFactura_WEB</name>
 	<comment></comment>
 	<projects>
-		<project>CertiFactura_Aplicacion</project>
-		<project>CertiFactura_Infraestructura</project>
 		<project>CertiFactura_Dominio_Clientes</project>
 		<project>CertiFactura_Dominio</project>
+		<project>CertiFactura_Infraestructura</project>
+		<project>CertiFactura_Aplicacion</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
