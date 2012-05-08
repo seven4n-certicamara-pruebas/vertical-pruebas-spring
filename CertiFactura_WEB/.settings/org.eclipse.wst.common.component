@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="CertiFactura_WEB">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <dependent-module archiveName="CertiFactura_Dominio_Clientes.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/CertiFactura_Dominio_Clientes/CertiFactura_Dominio_Clientes">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CertiFactura_Dominio.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/CertiFactura_Dominio/CertiFactura_Dominio">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CertiFactura_Infraestructura.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/CertiFactura_Infraestructura/CertiFactura_Infraestructura">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CertiFactura_Aplicacion.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/CertiFactura_Aplicacion/CertiFactura_Aplicacion">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/CertiFactura_WEB/build/classes"/>
+        <property name="context-root" value="CertiFactura"/>
+    </wb-module>
+</project-modules>
