@@ -1,7 +1,8 @@
 package com.certicamara.certifactura.cliente;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import javax.xml.rpc.ServiceException;
+
+import com.certicamara.certifactura.servicios.IServiciosFacturaElectronica;
 
 /**
  * CertiFactura
@@ -13,11 +14,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Cliente
 {
 	
-	public static void main(String args[]){
+	public static void main(String args[]) throws Exception{
 		
-		ApplicationContext contexto = new ClassPathXmlApplicationContext( "/client-beans.xml" );
+		/*IServiciosFacturaElectronica servicios = new ServiciosFacturaImplementacionServiceLocator().getServiciosFacturaImplementacionPort( );
 		
-		/*HelloWorld cliente = (HelloWorld)contexto.getBean("client");
+		servicios.crearFacturaElectronica( idEmisor, facturaElectronica, facturaParticular );*/
+		
+		/*ApplicationContext contexto = new ClassPathXmlApplicationContext( "/client-beans.xml" );
+		
+		HelloWorld cliente = (HelloWorld)contexto.getBean("client");
 		
 		String mensaje = cliente.imprimeMensaje( "hola" );
 		

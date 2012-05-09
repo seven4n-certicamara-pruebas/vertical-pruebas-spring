@@ -1,5 +1,7 @@
 package com.certicamara.certifactura.dominio.conceptos.facturaElectronica;
 
+import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionCertiFactura;
+
 /**
  * CertiFactura
  * Certicámara S.A.
@@ -12,14 +14,14 @@ public interface IFacturaElectronica
 	/**
 	 * Crea una Factura Electrónica 
 	 */
-	public void crearFacturaElectronica( );
+	public void crearFacturaElectronica( ) throws ExcepcionCertiFactura;
 
-	public void entregarFacturaElectronica( );
+	public void entregarFacturaElectronica( ) throws ExcepcionCertiFactura;
 
-	public void aceptarFacturaElectronica( );
+	public void aceptarFacturaElectronica( ) throws ExcepcionCertiFactura;
 
-	public void agregarNotaDebitoElectronica( );
+	public void agregarNotaDebitoElectronica( ) throws ExcepcionCertiFactura;
 
-	public void entregarNotaDebitoElectronica( );
+	public void entregarNotaDebitoElectronica( ) throws ExcepcionCertiFactura;
 	
 }

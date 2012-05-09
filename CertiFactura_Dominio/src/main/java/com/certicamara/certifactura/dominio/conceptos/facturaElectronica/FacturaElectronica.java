@@ -7,6 +7,7 @@ import com.certicamara.certifactura.dominio.conceptos.facturaElectronica.reposit
 import com.certicamara.certifactura.dominio.ddd.AggregateRoot;
 import com.certicamara.certifactura.dominio.ddd.Entity;
 import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
+import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionCertiFactura;
 
 /**
  * CertiFactura
@@ -134,39 +135,40 @@ public class FacturaElectronica extends AggregateRoot implements IFacturaElectro
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#crearFacturaElectronica()
 	 */
 	@Override
-	public void crearFacturaElectronica( )
+	public void crearFacturaElectronica( ) throws ExcepcionCertiFactura
 	{
 		System.out.println("EN FacturaElectronica.crearFacturaElectronica()");
 		RepositorioFacturaElectronica repositorioFacturaElectronica = new RepositorioFacturaElectronica("FacturaElectronica","Certicamara");
 		repositorioFacturaElectronica.guardar( this.obtenerDTO( ) );
 
 	}
+	
+	/* (non-Javadoc)
+	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#aceptarFacturaElectronica()
+	 */
+	@Override
+	public void aceptarFacturaElectronica( ) throws ExcepcionCertiFactura
+	{
+		// TODO Auto-generated method stub
+		
+	}
 
 	/* (non-Javadoc)
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#entregarFacturaElectronica()
 	 */
 	@Override
-	public void entregarFacturaElectronica( )
+	public void entregarFacturaElectronica( ) throws ExcepcionCertiFactura
 	{
 		// TODO Auto-generated method stub
 
 	}
 
-	/* (non-Javadoc)
-	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#aceptarFacturaElectronica()
-	 */
-	@Override
-	public void aceptarFacturaElectronica( )
-	{
-		// TODO Auto-generated method stub
-
-	}
 
 	/* (non-Javadoc)
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#agregarNotaDebitoElectronica()
 	 */
 	@Override
-	public void agregarNotaDebitoElectronica( )
+	public void agregarNotaDebitoElectronica( ) throws ExcepcionCertiFactura
 	{
 		// TODO Auto-generated method stub
 
@@ -176,7 +178,7 @@ public class FacturaElectronica extends AggregateRoot implements IFacturaElectro
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#entregarNotaDebitoElectronica()
 	 */
 	@Override
-	public void entregarNotaDebitoElectronica( )
+	public void entregarNotaDebitoElectronica( ) throws ExcepcionCertiFactura
 	{
 		// TODO Auto-generated method stub
 
@@ -236,4 +238,6 @@ public class FacturaElectronica extends AggregateRoot implements IFacturaElectro
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
 }

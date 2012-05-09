@@ -1,11 +1,16 @@
-package com.certicamara.certifactura.servicios;
+/**
+ * IServiciosFacturaElectronica.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
 
+package com.certicamara.certifactura.servicios;
 
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
-import com.certicamara.certifactura.dto.ParejaDTO;
+
 
 /**
  * CertiFactura
@@ -16,24 +21,24 @@ import com.certicamara.certifactura.dto.ParejaDTO;
  * Apr 27, 2012
  */
 @WebService
-public interface IServiciosFacturaElectronica
-{
+public interface IServiciosFacturaElectronica extends java.rmi.Remote {
 	
-	/**
-	 * Servicio que permite crear una factura electronica a partir de la factura canonica establecido en el modelo de negocio y la factura adicional establecido para cada cliente
-	 * 
-	 * @param idEmisor Identificador del emisor
-	 * @param facturaElectronica DTO de factura electronica canonica
-	 * @param mapa Mapa de valores que conforman la factura para cada cliente, es decir los atributos que estan especificados para cada cliente
-	 */
-	void crearFacturaElectronica(@WebParam( name = "idEmisor") String idEmisor, @WebParam( name = "facturaElectronicaCanonica") FacturaElectronicaDTO facturaElectronica, @WebParam( name = "camposAdicionales") ParejaDTO parejaFacturaParticular);
-	
+    
 	/**
 	 * Servicio que entrega una factura electronica para cada emisor  
-	 * 
-	 * @param idEmisor Identificador del emisor de la factura
-	 * @param idFactura identificador de la factura
+	 * @param idEmisor
+	 * @param idFactura
+	 * @throws java.rmi.RemoteException
 	 */
-	void entregarFacturaElectronica(@WebParam( name = "idEmisor") String idEmisor, @WebParam( name = "idFactura")  String idFactura);
-
+	public void entregarFacturaElectronica(@WebParam( name = "idEmisor") String idEmisor, @WebParam( name = "idFactura")  String idFactura) throws java.rmi.RemoteException;
+    
+    /**
+     * Servicio que permite crear una factura electronica a partir de la factura canonica establecido en el modelo de negocio y la factura adicional establecido para cada
+     * 
+     * @param idEmisor
+     * @param facturaElectronica
+     * @param facturaParticular
+     * @throws java.rmi.RemoteException
+     */
+    public void crearFacturaElectronica(@WebParam( name = "idEmisor") String idEmisor, @WebParam( name = "facturaElectronicaCanonica") com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO facturaElectronicaCanonica, @WebParam( name = "camposAdicionales") Object facturaParticular) throws java.rmi.RemoteException;
 }

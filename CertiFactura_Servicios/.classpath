@@ -16,5 +16,13 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/CertiFactura_Lib/lib/certifactura/DTOsCertiFactura.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_JACKSON/jackson-annotations-2.0.1.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_JACKSON/jackson-core-2.0.1.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_JACKSON/jackson-databind-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/CertiFactura_Lib/lib/terceros/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.core-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.beans-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.web-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

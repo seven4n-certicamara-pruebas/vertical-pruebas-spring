@@ -4,6 +4,7 @@ import com.certicamara.certifactura.dominio.clientes.facturaElectronica.dtos.Fac
 import com.certicamara.certifactura.dominio.clientes.facturaElectronica.repositorios.RepositorioFacturaElectronicaCarrefour;
 import com.certicamara.certifactura.dominio.conceptos.facturaElectronica.FacturaElectronica;
 import com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica;
+import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionCertiFactura;
 
 /**
  * CertiFactura
@@ -44,7 +45,7 @@ public class FacturaElectronicaCarrefour implements IFacturaElectronica{
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#crearFacturaElectronica()
 	 */
 	@Override
-	final public void crearFacturaElectronica( )
+	final public void crearFacturaElectronica( ) throws ExcepcionCertiFactura
 	{
 		//MIRAR SI EXISTE CONTENEDOR
 		System.out.println("EN FacturaElectronicaCarrefour.crearFacturaElectronica()");
@@ -62,7 +63,7 @@ public class FacturaElectronicaCarrefour implements IFacturaElectronica{
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#entregarFacturaElectronica()
 	 */
 	@Override
-	public void entregarFacturaElectronica( )
+	public void entregarFacturaElectronica( ) throws ExcepcionCertiFactura
 	{
 		// TODO Auto-generated method stub
 		
@@ -72,7 +73,7 @@ public class FacturaElectronicaCarrefour implements IFacturaElectronica{
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#aceptarFacturaElectronica()
 	 */
 	@Override
-	public void aceptarFacturaElectronica( )
+	public void aceptarFacturaElectronica( ) throws ExcepcionCertiFactura
 	{
 		// TODO Auto-generated method stub
 		
@@ -82,7 +83,7 @@ public class FacturaElectronicaCarrefour implements IFacturaElectronica{
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#agregarNotaDebitoElectronica()
 	 */
 	@Override
-	public void agregarNotaDebitoElectronica( )
+	public void agregarNotaDebitoElectronica( ) throws ExcepcionCertiFactura
 	{
 		// TODO Auto-generated method stub
 		
@@ -92,7 +93,7 @@ public class FacturaElectronicaCarrefour implements IFacturaElectronica{
 	 * @see com.certicamara.certifactura.dominio.conceptos.facturaElectronica.IFacturaElectronica#entregarNotaDebitoElectronica()
 	 */
 	@Override
-	public void entregarNotaDebitoElectronica( )
+	public void entregarNotaDebitoElectronica( ) throws ExcepcionCertiFactura
 	{
 		// TODO Auto-generated method stub
 		
