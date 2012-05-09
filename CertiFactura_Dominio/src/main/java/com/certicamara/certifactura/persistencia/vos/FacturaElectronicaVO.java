@@ -1,18 +1,19 @@
 package com.certicamara.certifactura.persistencia.vos;
 
-public class FacturaElectronicaVO
+public class FacturaElectronicaVO implements IVo<String>
 {
-	private Object id;
-	public FacturaElectronicaVO( Object id1){
+	private String id;
+	public FacturaElectronicaVO( String id1){
 		id=id1;
 	}
-	public Object getId( )
+	public String getId( )
 	{
 		return id;
 	}
 
-	public void setId( Object id )
+	public void setId( String id )
 	{
 		this.id = id;
-	} 
+	}
+
 }

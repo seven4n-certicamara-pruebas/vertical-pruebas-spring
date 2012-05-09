@@ -1,10 +1,146 @@
 package com.certicamara.certifactura.dominio.ddd;
 
+import java.net.UnknownHostException;
 
-public interface IRepositorio<T, VO> 
-{	
-	void guardar(T entidad);
-	void actualizar(T entidad) throws Exception;
-	T buscar(VO llave) throws Exception;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+
+import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionNegocio;
+import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionTecnica;
+import com.certicamara.certifactura.persistencia.vos.IVo;
+import com.mongodb.Mongo;
+import com.mongodb.MongoException;
+import com.mongodb.WriteConcern;
+
+
+/**
+ * Clase abstracta que implementa la lógica de un repositorio basico, con las operaciones de guardar, actualizar y buscar 
+ * @author hansen
+ *
+ * @param <T> Tipo de Entidad que se va a almacenar
+ */
+public abstract class IRepositorio<T> 
+{
+	////////////////////////////////////////////////////
+	// Atributos
+	////////////////////////////////////////////////////	
+	
+
+	private String collectionName;
+	private String bdName;
+	MongoOperations mongoOperations;
+	
+	
+	////////////////////////////////////////////////////
+	// Métodos
+	////////////////////////////////////////////////////
+	
+	
+	/**
+	 * @param collectionName Nombre de la colección
+	 * @param bdName Nombre de la base de datos
+	 */
+	
+	public IRepositorio( String collectionName, String bdName ) {
+		setBdName( bdName );
+		setCollectionName( collectionName );	
+		iniciarIRepositorio( );
+	}
+	
+	/**
+	 * Método encargado de persistir un elemento
+	 * @param elemento que se va a persistir
+	 * @param vo con el id del elemento
+	 * @param c La clase del elemento que se va a persistir
+	 * @exception ExcepciónNegocio Ya existe un elemento con el mismo id
+	 */
+	public void guardar( T entidad, IVo vo, Class<T> clase ) {
+		T entidadEncontrada = buscar( vo, clase );
+		if 	( null == entidadEncontrada )
+			throw new ExcepcionNegocio( " En IRepositorio: Ya existe un elemento con el mismo Id ",new Exception( ) );
+		else
+			mongoOperations.save( entidad, collectionName );
+	}
+	
+	/**
+	 * Método encargado de actualizar un elemento existente
+	 * @param elemento Elemento que va a reemplazar el existente
+	 * @param vo VO con el id del elemento a actualizar
+	 * @param c La clase del elemento que se va a actualizar
+	 * @throws ExcepcionTecnica
+	 */
+	
+	public void actualizar( T elemento, IVo vo, Class<T> clase ) throws ExcepcionTecnica
+	{		
+		try
+		{
+			buscar( vo , clase );
+			guardar( elemento , vo , clase );
+		}
+		catch ( ExcepcionTecnica e )
+		{
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( ) + " en RepositorioFacturaElectronicaCarrefour.actualizar: No se encontró la factura electrónica " + e.getMessage( ) ,e );
+		}
+		
+	}
+	
+	
+	/**
+	 * @param VO con el id del elemento a buscar
+	 * @param c Clase del elemento que se va a buscar
+	 * @return elemento encontrado o null en caso contrario
+	 */
+	public T buscar( IVo vo , Class<T> c )
+	{		
+		T elemento = null;
+		elemento =  mongoOperations.findById( vo.getId( ), c , collectionName );
+		return elemento;
+	}
+	
+	/**
+	 * Método encargado de inicializar el repositorio y obtener la conexión a la base de datos
+	 * @throws ExcepcionTecnica UnknownHostException
+	 * @throws ExcepcionTecnica MongoException
+	 */
+	
+	public void iniciarIRepositorio( ) throws ExcepcionTecnica
+	{
+		try
+		{
+			MongoTemplate template = new MongoTemplate( new SimpleMongoDbFactory( new Mongo( ), bdName ) );
+			template.setWriteConcern( WriteConcern.SAFE );
+			mongoOperations = template;
+		}
+		catch ( UnknownHostException e )
+		{
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" En IRepositorio: " + e.getMessage( ),e );
+		}
+		catch ( MongoException e )
+		{
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( )+" En IRepositorio: " + e.getMessage( ),e );
+		}
+		
+	}
+	
+	
+	/**
+	 * @param collectionName Nombre de la colección
+	 */
+	private void setCollectionName( String collectionName )
+	{
+		this.collectionName = collectionName;
+	}
+	
+	
+	/**
+	 * @param bdName Nombre de la base de datos
+	 */
+	
+	private void setBdName( String bdName )
+	{
+		this.bdName = bdName;
+	}
+	
 }
 

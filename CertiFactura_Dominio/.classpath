@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="/CertiFactura_Lib/lib/terceros/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/springsource/JarPlugins/Librerias_Persistencia/commons-logging-1.1.1/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="var" path="CERTIFACTURA_OTROS/asm-3.3.1.jar"/>
 	<classpathentry kind="var" path="CERTIFACTURA_OTROS/cglib-2.2.2.jar"/>
 	<classpathentry kind="var" path="CERTIFACTURA_OTROS/mongo-2.7.3.jar"/>
@@ -14,10 +14,11 @@
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.core-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.expression-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.transaction-3.1.1.RELEASE.jar"/>
-	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-commons-1.2.1.RELEASE/dist/spring-data-commons-core-1.2.1.RELEASE.jar"/>
-	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongo-1.0.1.RELEASE/dist/spring-data-mongodb-1.0.1.RELEASE.jar"/>
-	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongo-1.0.1.RELEASE/dist/spring-data-mongodb-cross-store-1.0.1.RELEASE.jar"/>
-	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongo-1.0.1.RELEASE/dist/spring-data-mongodb-log4j-1.0.1.RELEASE.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CertiFactura_Infraestructura"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-commons-core-1.2.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-cross-store-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-log4j-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/hansen/springsource/JarPlugins/Librerias_Testing/junit-4.10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

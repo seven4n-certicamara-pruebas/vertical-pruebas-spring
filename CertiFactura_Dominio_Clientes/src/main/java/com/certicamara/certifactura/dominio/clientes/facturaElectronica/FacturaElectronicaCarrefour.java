@@ -54,7 +54,7 @@ public class FacturaElectronicaCarrefour implements IFacturaElectronica{
 		
 		//si todo ok con la conónica, persistir la personalizada
 		//llamar el repositorio y que se guarde
-		RepositorioFacturaElectronicaCarrefour repo = new RepositorioFacturaElectronicaCarrefour( );
+		RepositorioFacturaElectronicaCarrefour repo = new RepositorioFacturaElectronicaCarrefour("FacturaCarrefour","Certicamara" );
 		repo.guardar( this.obtenerDTO( ) );
 	}
 

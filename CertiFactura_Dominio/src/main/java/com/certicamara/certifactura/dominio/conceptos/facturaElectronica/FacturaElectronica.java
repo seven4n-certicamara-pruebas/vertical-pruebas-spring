@@ -137,7 +137,7 @@ public class FacturaElectronica extends AggregateRoot implements IFacturaElectro
 	public void crearFacturaElectronica( )
 	{
 		System.out.println("EN FacturaElectronica.crearFacturaElectronica()");
-		RepositorioFacturaElectronica repositorioFacturaElectronica = new RepositorioFacturaElectronica( );
+		RepositorioFacturaElectronica repositorioFacturaElectronica = new RepositorioFacturaElectronica("FacturaElectronica","Certicamara");
 		repositorioFacturaElectronica.guardar( this.obtenerDTO( ) );
 
 	}

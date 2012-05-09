@@ -1,17 +1,19 @@
 package com.certicamara.certifactura.persistencia.clientes.facturaElectronica.vos;
 
-public class FacturaElectronicaCarrefourVO
+import com.certicamara.certifactura.persistencia.vos.IVo;
+
+public class FacturaElectronicaCarrefourVO implements IVo<String>
 {
-	private Object id;
-	public FacturaElectronicaCarrefourVO( Object id1){
+	private String id;
+	public FacturaElectronicaCarrefourVO( String id1){
 		id=id1;
 	}
-	public Object getId( )
+	public String getId( )
 	{
 		return id;
 	}
 
-	public void setId( Object id )
+	public void setId( String id )
 	{
 		this.id = id;
 	} 
