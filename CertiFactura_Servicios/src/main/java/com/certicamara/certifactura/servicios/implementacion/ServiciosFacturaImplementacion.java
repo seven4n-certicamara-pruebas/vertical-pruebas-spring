@@ -54,7 +54,7 @@ public class ServiciosFacturaImplementacion implements IServiciosFacturaElectron
             String cadenaJsonFacturaCliente = mapper.writeValueAsString( mapaFacturaCliente );			
 			String cadenaJsonFacturaCanonica = mapper.writeValueAsString( facturaElectronicaCanonica );
 			IComandoDTO comando = new ComandoCrearFacturaElectronicaDTO(cadenaJsonFacturaCanonica, cadenaJsonFacturaCliente, "Carrefour" );
-			//gestorComandos.recibirComando(comando);
+			gestorComandos.recibirComando(comando);
 		}catch( Exception ex ){
 			ex.printStackTrace( );
 		}
