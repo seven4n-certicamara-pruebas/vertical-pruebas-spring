@@ -11,8 +11,9 @@
   <property name="web.home"      value="${basedir}/WebContent"/>
   <property name="local.lib"      value="${basedir}/WebContent/WEB-INF/lib"/>
   <property name="spring.lib"      value="${tcserver.home}/certifacturaLibs/spring"/>
-  <property name="cxf.lib"      value="${tcserver.home}/certifacturaLibs/spring_mvc"/>
+  <property name="cxf.lib"      value="${tcserver.home}/certifacturaLibs/cxf"/>
   <property name="jackson.lib"      value="${tcserver.home}/certifacturaLibs/jackson"/>
+  <property name="spring_mvc.lib"      value="${tcserver.home}/certifacturaLibs/spring_mvc"/>
 
   <target name="help">
     <echo>You can use the following targets:</echo>
@@ -54,6 +55,10 @@
   	</fileset>
   	    
   	<fileset dir="${jackson.lib}">
+  	      <include name="*.jar"/>
+  	</fileset>
+  	
+  	<fileset dir="${spring_mvc.lib}">
   	      <include name="*.jar"/>
   	</fileset>
   	
