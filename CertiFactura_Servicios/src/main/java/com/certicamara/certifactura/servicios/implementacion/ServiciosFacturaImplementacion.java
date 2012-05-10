@@ -3,14 +3,15 @@ package com.certicamara.certifactura.servicios.implementacion;
 
 
 import java.rmi.RemoteException;
+import java.util.HashMap;
 
 import javax.jws.WebService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.certicamara.certifactura.aplicacion.Comando;
 import com.certicamara.certifactura.aplicacion.GestorComandos;
-import com.certicamara.certifactura.aplicacion.FacturaElectronica.ComandoCrearFacturaElectronica;
+import com.certicamara.certifactura.aplicacion.comandos.IComandoDTO;
+import com.certicamara.certifactura.aplicacion.comandos.facturaElectronica.ComandoCrearFacturaElectronicaDTO;
 import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
 import com.certicamara.certifactura.servicios.IServiciosFacturaElectronica;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -48,9 +49,12 @@ public class ServiciosFacturaImplementacion implements IServiciosFacturaElectron
 	{
 		try{			
 			ObjectMapper mapper = new ObjectMapper();
-			String cadenaJsonFacturaCanonica = mapper.writeValueAsString( facturaElectronicaCanonica );		
-			Comando comando = (Comando)new ComandoCrearFacturaElectronica(cadenaJsonFacturaCanonica, "Exito");			
-			gestorComandos.recibirComando(comando);
+			HashMap< String, Object > mapaFacturaCliente = new HashMap< String, Object >( );
+            mapaFacturaCliente.put( "contenedor", "Contenedor192932" );
+            String cadenaJsonFacturaCliente = mapper.writeValueAsString( mapaFacturaCliente );			
+			String cadenaJsonFacturaCanonica = mapper.writeValueAsString( facturaElectronicaCanonica );
+			IComandoDTO comando = new ComandoCrearFacturaElectronicaDTO(cadenaJsonFacturaCanonica, cadenaJsonFacturaCliente, "Carrefour" );
+			//gestorComandos.recibirComando(comando);
 		}catch( Exception ex ){
 			ex.printStackTrace( );
 		}
