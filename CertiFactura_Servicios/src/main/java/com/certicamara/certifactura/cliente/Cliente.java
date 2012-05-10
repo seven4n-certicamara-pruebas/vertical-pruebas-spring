@@ -1,8 +1,6 @@
 package com.certicamara.certifactura.cliente;
 
-import javax.xml.rpc.ServiceException;
 
-import com.certicamara.certifactura.servicios.IServiciosFacturaElectronica;
 
 /**
  * CertiFactura

@@ -7,8 +7,8 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>WebContent/WEB-INF/classes/app-context.xml</config>
-		<config>WebContent/WEB-INF/classes/client-beans.xml</config>
+		<config>WebContent/WEB-INF/spring/app-context.xml</config>
+		<config>WebContent/WEB-INF/spring/client-beans.xml</config>
 	</configs>
 	<configSets>
 	</configSets>

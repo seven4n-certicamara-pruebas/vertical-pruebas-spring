@@ -5,7 +5,7 @@
 	
  	<bean id="clientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
 		  <property name="serviceClass" value="com.certicamara.certifactura.servicios.IServiciosFacturaElectronica"/>
-		  <property name="address" value="http://localhost:8080/CertiFactura_Servicios/ServiciosFacturaElectronica"/>
+		  <property name="address" value="http://localhost:8080/CertiFacturaServicios/ServiciosFacturaElectronica"/>
 	 </bean>	
 	
 	<bean id="client" class="com.certicamara.certifactura.servicios.IServiciosFacturaElectronica" factory-bean="clientFactory" factory-method="create"/>
