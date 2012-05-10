@@ -123,6 +123,7 @@ public class ComandoCrearFacturaElectronicaDTO implements IComandoDTO
 		return facturaElectronicaDTO;
 	}
 	
+	@SuppressWarnings ( "unchecked" )
 	private HashMap< String, Object > transformarJsonMapa(String jsonFacturaElectronicaCliente){
 		HashMap<String,Object> mapaFacturaCliente;
 
