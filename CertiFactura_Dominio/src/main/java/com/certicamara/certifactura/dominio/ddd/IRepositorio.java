@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
+import com.certicamara.certifactura.infraestructura.constantes.ConstantesPersistenciaCertiFactura;
 import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionNegocio;
 import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionTecnica;
 import com.certicamara.certifactura.persistencia.vos.IVo;
@@ -31,7 +32,6 @@ public abstract class IRepositorio<T>
 	private String bdName;
 	MongoOperations mongoOperations;
 	
-	
 	////////////////////////////////////////////////////
 	// Métodos
 	////////////////////////////////////////////////////
@@ -44,6 +44,12 @@ public abstract class IRepositorio<T>
 	
 	public IRepositorio( String collectionName, String bdName ) {
 		setBdName( bdName );
+		setCollectionName( collectionName );	
+		iniciarIRepositorio( );
+	}
+	
+	public IRepositorio( String collectionName ) {
+		setBdName( ConstantesPersistenciaCertiFactura.NOMBRE_BASE_DATOS_CERTIFACTURA );
 		setCollectionName( collectionName );	
 		iniciarIRepositorio( );
 	}

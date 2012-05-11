@@ -23,6 +23,16 @@ public class RepositorioFacturaElectronica extends IRepositorio< FacturaElectron
 	}
 	
 	/**
+	 * Constructor encargado de inicializar un repositorio
+	 * @param collectionName Nombre de la colección donde se va almacenar las facturas
+	 */
+	
+	public RepositorioFacturaElectronica( String collectionName )
+	{
+		super( collectionName );		
+	}
+	
+	/**
 	 * Método encargado de guardar una fáctura
 	 * @param facturaElectronicaCarrefourDTO Factura electrónica carrefour 
 	 */	

@@ -2,6 +2,8 @@ package com.certicamara.certifactura.dominio.conceptos.documento;
 
 import java.util.Collection;
 
+import co.s4n.osp.EntityWithStates;
+
 /**
  * CertiFactura
  * Certicámara S.A.
@@ -9,9 +11,9 @@ import java.util.Collection;
  * @author Seven4N Ltda.
  * Apr 20, 2012
  */
-public class DocumentoCertiFactura
+public abstract class DocumentoCertiFactura extends EntityWithStates
 {
-	
+
 	//------------------------------
 	//        Atributos
 	//------------------------------
@@ -29,19 +31,19 @@ public class DocumentoCertiFactura
 	 */
 	public DocumentoCertiFactura( Collection< ProductoCertiFactura > productos, Collection< EstadoDocumentoCertiFactura > estados, ListaAbonosCertiFactura listaAbonos, Collection< SoporteAdjuntoCertiFactura > soportesAdjuntos )
 	{
-		super( );
+		//TODO SETEAR ID
+		super( "id" );
 		this.productos = productos;
 		this.estados = estados;
 		this.listaAbonos = listaAbonos;
 		this.soportesAdjuntos = soportesAdjuntos;
 	}
-	
-	/**
-	 * Constructor
-	 */
-	public DocumentoCertiFactura( )
+
+
+
+	public DocumentoCertiFactura( String id )
 	{
-		// TODO Auto-generated constructor stub
+		super( id );
 	}
 
 	//------------------------------
@@ -91,6 +93,8 @@ public class DocumentoCertiFactura
 	{
 		this.soportesAdjuntos = soportesAdjuntos;
 	}
+
+
 
 	//------------------------------
 	//       Métodos Privados

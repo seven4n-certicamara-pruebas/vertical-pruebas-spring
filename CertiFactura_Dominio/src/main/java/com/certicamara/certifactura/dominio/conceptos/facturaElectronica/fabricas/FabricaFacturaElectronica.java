@@ -33,12 +33,8 @@ public class FabricaFacturaElectronica implements IFabricaCanonico< FacturaElect
 	@Override
 	public FacturaElectronica create( FacturaElectronicaDTO dto )
 	{
-		FacturaElectronica factura = new FacturaElectronica( );
-		factura.setConsecutivoIdentificador( dto.getConsecutivoIdentificador( ) );
-		factura.setEstado( dto.getEstado( ));
-		factura.setFecha( dto.getFecha( ) );
-		factura.setIdentificacionEmisor( dto.getIdentificacionEmisor( ));
-		factura.setIdentificacionReceptor( dto.getIdentificacionReceptor( ));
+		//TODO OJO MIRAR QUE ID SE LE DA
+		FacturaElectronica factura = new FacturaElectronica(dto.getId( ) );
 
 		return factura;
 	}

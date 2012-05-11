@@ -12,8 +12,11 @@
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.transaction-3.1.1.RELEASE.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CertiFactura_Infraestructura"/>
 	<classpathentry kind="var" path="CERTIFACTURA_MONGODB/mongo-2.7.3.jar"/>
-	<classpathentry kind="var" path="CERTIFACTURA_OTROS/asm-3.3.1.jar"/>
-	<classpathentry kind="var" path="CERTIFACTURA_OTROS/cglib-2.2.2.jar"/>
-	<classpathentry kind="var" path="CERTIFACTURA_OTROS/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_OTROS/guava-12.0.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_OTROS/OSP.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-commons-core-1.2.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-cross-store-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-log4j-1.0.1.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

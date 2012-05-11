@@ -1,10 +1,10 @@
 package tests;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 
 public class Prueba{
-	@Test
+//	@Test
 	public void testPrueba(){
 //		repositorioFacturaElectronicaCarrefour repositorioFacturaElectronicaCarrefour=new RepositorioFacturaElectronicaCarrefour( "FacturaCarrefour","Certicamara" );
 //		FacturaElectronicaCarrefourDTO facturaElectronicaCarrefourDTO=new FacturaElectronicaCarrefourDTO( );
