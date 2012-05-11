@@ -30,6 +30,8 @@
       <include name="*.jar"/>
     </fileset>
     -->    
+  	
+  	<!--
   	<fileset dir="${spring.lib}">
   	      <include name="*.jar"/>
     </fileset>
@@ -49,6 +51,7 @@
   	<fileset dir="${otros.lib}">
   	      <include name="*.jar"/>
     </fileset>  
+    -->
   	
   </path>
 
@@ -84,7 +87,7 @@
          basedir="${work.home}"/>
   </target>
 	
-	<target name="deploywar" depends="clean,compile,dist" description="Deploy application as a JAR file">
+	<target name="deployjar" depends="clean,compile,dist" description="Deploy application as a JAR file">
 	    <copy todir="${deploy.jar.path}" preservelastmodified="true">
 	        <fileset dir="${dist.home}/">
 	            <include name="${app.name}.jar"/>
