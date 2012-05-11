@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CertifacturaDominio" default="all" basedir=".">
+  <property file="build.properties"/>
+  <!-- Define the properties used by the build -->
+  <property name="app.name"      value="CertiFacturaDominio"/>
+	<!--
+  <property name="tcserver.home" value="/home/marci/dev/vfabric-tc-server-developer-2.6.5.RELEASE/certifactura" />
+  <property name="tcserver.lib" value="/home/marci/dev/vfabric-tc-server-developer-2.6.5.RELEASE/certifactura/certifacturaLib" />
+  <property name="tcserver.base" value="/home/marci/dev/vfabric-tc-server-developer-2.6.5.RELEASE/tomcat-7.0.26.A.RELEASE" />
+  -->
+  <property name="work.home"    value="${basedir}/work"/>
+  <property name="dist.home"     value="${basedir}/dist"/>
+  <property name="src.home"      value="${basedir}/src"/>
+  <property name="spring.lib"      value="${tcserver.lib}/spring"/>
+  <property name="mongodb.lib"      value="${tcserver.lib}/mongodb"/>
+  <property name="spring_data.lib"      value="${tcserver.lib}/spring_data"/>
+  <property name="capas.lib"      value="${tcserver.lib}/capas"/>
+  
+
+  <!-- Define the CLASSPATH -->
+  <path id="compile.classpath">
+    <fileset dir="${tcserver.base}/lib">
+      <include name="*.jar"/>
+    </fileset>
+  	<!--
+    <pathelement location="${tcserver.home}/certifacturaLibs"/>
+  	
+  	<fileset dir="${tcserver.home}/certifacturaLibs">
+      <include name="*.jar"/>
+    </fileset>
+    -->   
+  	<fileset dir="${capas.lib}">
+  	  	      <include name="CertiFacturaInfraestructura.jar"/>
+  	    </fileset>
+  	
+  	<fileset dir="${spring.lib}">
+  	      <include name="*.jar"/>
+    </fileset>
+  	
+  	<fileset dir="${spring_data.lib}">
+  	      <include name="*.jar"/>
+    </fileset>
+  	
+  	<fileset dir="${mongodb.lib}">
+  	      <include name="*.jar"/>
+  	</fileset>
+  </path>
+
+  <target name="all" depends="clean,compile,dist"
+          description="Clean work dirs, then compile and create a jar"/>
+
+  <target name="clean"
+          description="Delete old work and dist directories">
+    <delete dir="${work.home}"/>
+    <delete dir="${dist.home}"/>
+  </target>
+
+  <target name="prepare" depends="clean"
+          description="Create working dirs and copy static files to work dir">
+    <mkdir  dir="${dist.home}"/>
+  	<mkdir  dir="${work.home}"/>
+  </target>
+
+  <target name="compile" depends="prepare"
+          description="Compile Java sources and copy to WEB-INF/classes dir">
+    <javac srcdir="${src.home}"
+          destdir="${work.home}">
+        <classpath refid="compile.classpath"/>
+    </javac>
+    <copy  todir="${work.home}">
+      <fileset dir="${src.home}" excludes="**/*.java"/>
+    </copy>
+  </target>
+
+  <target name="dist" depends="compile"
+          description="Create JAR file for binary distribution">
+    <jar jarfile="${dist.home}/${app.name}.jar"
+         basedir="${work.home}"/>
+  </target>
+	
+	<target name="deployjar" depends="clean,compile,dist" description="Deploy application as a JAR file">
+	    <copy todir="${deploy.jar.path}" preservelastmodified="true">
+	        <fileset dir="${dist.home}/">
+	            <include name="${app.name}.jar"/>
+	        </fileset>
+	    </copy>
+	</target>
+</project> 
