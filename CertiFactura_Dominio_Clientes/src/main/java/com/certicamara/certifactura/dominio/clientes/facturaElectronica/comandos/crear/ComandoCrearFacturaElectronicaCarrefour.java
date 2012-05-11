@@ -37,7 +37,7 @@ public class ComandoCrearFacturaElectronicaCarrefour implements IComandoCrearFac
 		facturaElectronicaCliente.setFacturaCanonica( facturaElectronicaCanonica );
 		
 		//llamar servicio
-		facturaElectronicaCliente.crearFacturaElectronica( );
+		facturaElectronicaCliente.expedirFacturaElectronica( );
 		
 	}
 
