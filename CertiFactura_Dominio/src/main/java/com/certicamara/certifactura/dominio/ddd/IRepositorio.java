@@ -56,24 +56,27 @@ public abstract class IRepositorio<T>
 	
 	/**
 	 * Método encargado de persistir un elemento
-	 * @param elemento que se va a persistir
+	 * @param entidad que se va a persistir
 	 * @param vo con el id del elemento
-	 * @param c La clase del elemento que se va a persistir
+	 * @param clase La clase del elemento que se va a persistir
 	 * @exception ExcepciónNegocio Ya existe un elemento con el mismo id
 	 */
-	public void guardar( T entidad, IVo vo, Class<T> clase ) {
+	public void guardar( T entidad, IVo vo, Class<T> clase ) throws ExcepcionNegocio {
 		T entidadEncontrada = buscar( vo, clase );
-		if 	( null == entidadEncontrada )
-			throw new ExcepcionNegocio( " En IRepositorio: Ya existe un elemento con el mismo Id ",new Exception( ) );
-		else
+		if 	( null == entidadEncontrada ){
 			mongoOperations.save( entidad, collectionName );
+		}
+		else{
+			throw new ExcepcionNegocio( " En IRepositorio: Ya existe un elemento con el mismo Id ",new Exception( ) );
+		}
+			
 	}
 	
 	/**
 	 * Método encargado de actualizar un elemento existente
 	 * @param elemento Elemento que va a reemplazar el existente
 	 * @param vo VO con el id del elemento a actualizar
-	 * @param c La clase del elemento que se va a actualizar
+	 * @param clase La clase del elemento que se va a actualizar
 	 * @throws ExcepcionTecnica
 	 */
 	
@@ -86,21 +89,21 @@ public abstract class IRepositorio<T>
 		}
 		catch ( ExcepcionTecnica e )
 		{
-			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( ) + " en RepositorioFacturaElectronicaCarrefour.actualizar: No se encontró la factura electrónica " + e.getMessage( ) ,e );
+			throw new ExcepcionTecnica( e.getClass( ).getSimpleName( ) + " en RepositorioFacturaElectronicaCarrefour.actualizar: No se encontró la entidad " + e.getMessage( ) ,e );
 		}
 		
 	}
 	
 	
 	/**
-	 * @param VO con el id del elemento a buscar
-	 * @param c Clase del elemento que se va a buscar
+	 * @param vo con el id del elemento a buscar
+	 * @param clase Clase del elemento que se va a buscar
 	 * @return elemento encontrado o null en caso contrario
 	 */
-	public T buscar( IVo vo , Class<T> c )
+	public T buscar( IVo vo , Class<T> clase )
 	{		
 		T elemento = null;
-		elemento =  mongoOperations.findById( vo.getId( ), c , collectionName );
+		elemento =  mongoOperations.findById( vo.getId( ), clase , collectionName );
 		return elemento;
 	}
 	
