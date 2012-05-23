@@ -1,5 +1,7 @@
 package com.certicamara.certifactura.dominio.conceptos.facturaElectronica;
 
+import java.util.HashMap;
+
 import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
 
 /**

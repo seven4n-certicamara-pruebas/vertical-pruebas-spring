@@ -11,9 +11,9 @@ import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
  * @author Seven4N Ltda.
  * Apr 27, 2012
  */
-public interface IComandoCrearFacturaElectronica
+public interface IComandoExpedirFacturaElectronica
 {
-	public void crearFacturaElectronica(FacturaElectronicaDTO facturaElectronicaCanonica, HashMap<String,Object> mapaCliente);
+	public void expedirFacturaElectronica(FacturaElectronicaDTO facturaElectronicaCanonica, HashMap<String,Object> mapaCliente);
 }
 
 

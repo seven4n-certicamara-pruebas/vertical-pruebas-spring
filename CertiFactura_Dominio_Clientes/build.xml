@@ -15,6 +15,7 @@
   <property name="mongodb.lib"      value="${tcserver.lib}/mongodb"/>
   <property name="spring_data.lib"      value="${tcserver.lib}/spring_data"/>
   <property name="capas.lib"      value="${tcserver.lib}/capas"/>
+  <property name="otros.lib"      value="${tcserver.lib}/otros"/>
   
 
   <!-- Define the CLASSPATH -->
@@ -44,6 +45,10 @@
   	
   	<fileset dir="${mongodb.lib}">
   	      <include name="*.jar"/>
+  	</fileset>
+  	
+  	<fileset dir="${otros.lib}">
+  	      <include name="OSP.jar"/>
   	</fileset>
   </path>
 

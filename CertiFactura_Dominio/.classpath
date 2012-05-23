@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.aop-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING/org.springframework.asm-3.1.1.RELEASE.jar"/>
@@ -18,5 +19,8 @@
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-1.0.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-cross-store-1.0.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="CERTIFACTURA_SPRING_DATA/spring-data-mongodb-log4j-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_OTROS/hamcrest-core-1.1.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_OTROS/junit-4.10.jar"/>
+	<classpathentry kind="var" path="CERTIFACTURA_OTROS/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
