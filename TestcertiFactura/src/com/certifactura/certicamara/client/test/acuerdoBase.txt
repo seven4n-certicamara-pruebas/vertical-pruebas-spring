@@ -1,0 +1,74 @@
+ACUERDO ÚNICO DE FACTURACIÓN ELECTRÓNICA ENTRE $NOMBRE_ADQUIRIENTE$ con $DOCUMENTO_ADQUIRIENTE$ con dirección $DIRECCION_ADQUIRENTE$ Y $NOMBRE_OBLIGADO_FACTURAR$ con $DOCUMENTO_OBLIGADO_FACTURAR$ con dirección $DIRECCION_OBLIGADO_FACTURAR$.
+
+ACUERDO DE EXPEDICIÓN Y ACEPTACIÓN DE FACTURACIÓN ELECTRÓNICA
+
+El presente contrato tiene como fin Crear el Acuerdo de Expedición y Aceptación de Facturación Electrónica entre $NOMBRE_ADQUIRIENTE$  con $DOCUMENTO_ADQUIRIENTE$ con dirección $DIRECCION_ADQUIRENTE$ como Usuario(s) Adquirente(s) y $NOMBRE_OBLIGADO_FACTURAR$ con $DOCUMENTO_OBLIGADO_FACTURAR$ con dirección $DIRECCION_OBLIGADO_FACTURAR$ como la Empresa que expide los Documentos Digitales.  
+
+SE INCLUYE EN EL PRESENTE ACUERDO ENTRE EL ADQUIRIENTE Y LA EMPRESA QUE HACE LA FACTURACIÓN ELECTRÓNICA LAS SIGUIENTES CAPACIDADES:
+
+Expedición, Entrega, Aceptación, Conservación, Exhibición 
+
+DEFINICIONES
+
+Definición de Factura Electrónica 
+
+Es el documento que soporta transacciones de venta de bienes y/o servicios, que para efectos fiscales debe ser expedida, entregada, aceptada y conservada por y en medios y formatos electrónicos, a través de un proceso de facturación que utilice procedimientos y tecnología de información, en forma directa o a través de terceros, que garantice su autenticidad e integridad desde su expedición y durante todo el tiempo de su conservación, de conformidad con lo establecido en este decreto, incluidos los documentos que la afectan como son las notas crédito (Artículo 1, decreto 1929 de 2007) 
+La factura electrónica deberá contener como mínimo los requisitos señalados en el artículo 617 del Estatuto Tributario y las normas que lo modifiquen o complementen, salvo los referentes al nombre o razón social y NIT del impresor. La factura electrónica no requiere la preimpresión de los requisitos que según dicha norma deben cumplir con esta previsión. (artículo 3 del decreto 1929 de 2007). 
+
+Tratándose de las empresas de servicios públicos domiciliarios, la factura electrónica deberá contener como mínimo los requisitos señalados en el artículo 17 del Decreto 1001 de 1997. 
+La factura electrónica y las notas crédito deberán contener dentro del formato electrónico en el que se conservan, información técnica de control referida al contenido fiscal mismo, al momento de expedición y al formato electrónico de conservación del documento, entre otros, de acuerdo con las características que establezca la Dirección de impuestos y Aduanas Nacionales (artículo 4 del decreto 1929 de 2007). 
+
+Terceros 
+Es la persona natural o jurídica que presta al obligado a facturar y/o al adquirente, los servicios inherentes al proceso de facturación, tales como: expedición, entrega, aceptación, conservación y exhibición. 
+
+EL PROCESO DE FACTURACIÓN ELECTRÓNICA 
+
+Certificación 
+Informar a la DIAN 
+Numeración 
+Entrega 
+Aceptación 
+Conservación 
+Exhibición 
+Reportes a la DIAN 
+Causales de terminación / salida 
+
+Aceptación 
+
+Sólo se podrá usar la factura electrónica cuando el adquirente lo haya aceptado en forma expresa. Para tal efecto deberá suscribirse de manera independiente un acuerdo entre el obligado a facturar y el adquirente, donde se establezcan previa y claramente como mínimo: fecha a partir de la cual rige, causales de terminación, los intervinientes en el proceso, las operaciones de venta a las que aplica, los procedimientos de expedición, entrega, aceptación, conservación y exhibición, el formato electrónico de conservación, la tecnología de información usada, asegurando, en todo caso, que se garanticen los principios básicos enunciados en el presente decreto. 
+Igualmente, en el acuerdo deberá preverse un procedimiento de contingencia, aplicable cuando se presenten situaciones que no permitan llevar a cabo los procedimientos y medios acordados. 
+El acuerdo debe ser conservado tanto por el obligado a facturar como por el adquirente y estar a disposición de la Dirección de Impuestos y Aduanas Nacionales para cuando la misma lo requiera (Artículo 7 del decreto ) 
+
+Conservación 
+
+El obligado a facturar y el adquirente deberán conservar las facturas electrónicas y las notas crédito en el mismo formato electrónico en que fueron generadas y por el mismo término de las facturas en papel. 
+El adquirente puede cumplir con esta obligación por medios propios, de terceros o del obligado a facturar, siempre y cuando se pacte previamente en el acuerdo para la expedición y aceptación de facturas electrónicas, sin perjuicio de la responsabilidad del adquirente respecto de sus obligaciones contables y tributarias. 
+
+Exhibición
+
+En caso de requerirse la exhibición de la factura electrónica, esta deberá realizarse por medios y en formatos electrónicos o físicos, según lo solicite la Dirección de Impuestos y Aduanas Nacionales y demás entes de control, de modo que se reproduzca con exactitud y de manera comprensible la información correspondiente a los contenidos fiscal y técnico (artículo 5 del decreto 1929 de 2007). 
+Si la exhibición se le requiere al adquirente, puede cumplir con esta obligación por medios propios, de terceros o del obligado a facturar, según se establezca previamente en el acuerdo para la expedición y aceptación de facturas electrónicas, sin perjuicio de la responsabilidad del adquirente respecto de sus obligaciones contables y tributarias. 
+
+
+Declaración de las Prácticas de Certificación 
+
+El sistema de Facturación Electrónica realizará la debida Certificación de las Facturas y documentos legales expedidos mediante este utilizando firmas digitales
+con alto nivel de seguridad y protección utilizando certificados digitales de tipo .p12 .pfx u otros.
+
+
+Causales de terminación / salida 
+A solicitud de parte
+
+a) Cuando se presenten circunstancias que impidan el uso de la factura electrónica tales como: liquidación de la persona jurídica o asimilada, fusión por absorción o fusión por creación, cuando la sociedad o sociedades absorbidas o fusionadas facturaban electrónicamente. En los eventos de escisión, cuando la sociedad que facturaba electrónicamente desaparece jurídicamente y, por cese de actividades mercantiles en forma definitiva, entre otros. 
+b) Cuando el obligado opte por no facturar electrónicamente, informando la numeración sobrante, si fuere el caso. 
+El interesado deberá informar el cese de operaciones bajo la modalidad de factura electrónica y solicitar la inhabilitación de la numeración sobrante, cuando sea el caso. 
+
+
+
+OBLIGACIONES DEL USUARIO 
+Informar cualquier cambio en la dirección de correo electrónico en la que desee recibir los avisos. 
+Garantizar y responder, en todo caso, de la ve­racidad, exactitud, vigencia y autenticidad de los datos personales facilitados a través del formulario de alta en el Área del Cliente. 
+
+Acepto, $NOMBRE_ADQUIRIENTE$ Fecha: $FECHA_ACUERDO$
+
+Acepto, $NOMBRE_OBLIGADO_FACTURAR$  Fecha: $FECHA_ACUERDO$
