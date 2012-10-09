@@ -7,10 +7,7 @@ public class Test {
 
 	private String test2;
 
-	private String test10;
-
-
-	private String test3;
+	private String test5;
 	/**
 	 * @return the test2
 	 */
@@ -36,35 +33,20 @@ public class Test {
 	}
 
 	/**
-	 * @return the test3
+	 * @return the test5
 	 */
-	public String getTest3( )
+	public String getTest5( )
 	{
-		return test3;
+		return test5;
 	}
 
 	/**
-	 * @param test3 the test3 to set
+	 * @param test5 the test5 to set
 	 */
-	public void setTest3( String test3 )
+	public void setTest5( String test5 )
 	{
-		this.test3 = test3;
+		this.test5 = test5;
 	}
 
-	/**
-	 * @return the test10
-	 */
-	public String getTest10( )
-	{
-		return test10;
-	}
-
-	/**
-	 * @param test10 the test10 to set
-	 */
-	public void setTest10( String test10 )
-	{
-		this.test10 = test10;
-	}
 
 }
