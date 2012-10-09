@@ -6,7 +6,7 @@ public class Test {
 	
 	private String test2;
 
-
+	private String test3;
 	/**
 	 * @return the test2
 	 */
@@ -29,6 +29,22 @@ public class Test {
 
 	public void setTest(String test) {
 		this.test = test;
+	}
+
+	/**
+	 * @return the test3
+	 */
+	public String getTest3( )
+	{
+		return test3;
+	}
+
+	/**
+	 * @param test3 the test3 to set
+	 */
+	public void setTest3( String test3 )
+	{
+		this.test3 = test3;
 	}
 
 }
