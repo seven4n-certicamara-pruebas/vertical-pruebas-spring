@@ -23,6 +23,7 @@ public class Test {
 	{
 		this.test2 = test2;
 	}
+	private String test6;
 
 	public String getTest() {
 		return test;
@@ -48,5 +49,20 @@ public class Test {
 		this.test5 = test5;
 	}
 
+	/**
+	 * @return the test6
+	 */
+	public String getTest6( )
+	{
+		return test6;
+	}
+
+	/**
+	 * @param test6 the test6 to set
+	 */
+	public void setTest6( String test6 )
+	{
+		this.test6 = test6;
+	}
 
 }
