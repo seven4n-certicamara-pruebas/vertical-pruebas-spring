@@ -1,31 +1,8 @@
 package com.certifactura.certicamara.client.test;
 
-import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.certicamara.certifactura.aplicacion.GestorComandos;
-import com.certicamara.certifactura.aplicacion.comandos.facturaElectronica.ComandoExpedirFacturaElectronicaDTO;
-import com.certicamara.certifactura.aplicacion.generador.GeneradorFuncionalidades;
-import com.certicamara.certifactura.dominio.conceptos.documento.ProductoCertiFactura;
-import com.certicamara.certifactura.dominio.dtos.FacturaElectronicaDTO;
-import com.certicamara.certifactura.dominio.dtos.numeracion.RangoNumeracionDTO;
-import com.certicamara.certifactura.dominio.dtos.numeracion.ResolucionFacturacionDTO;
-import com.certicamara.certifactura.dominio.dtos.persona.AdquirienteDTO;
-import com.certicamara.certifactura.dominio.dtos.persona.ObligadoFacturarDTO;
-import com.certicamara.certifactura.infraestructura.enums.EnumNaturalezaPersona;
-import com.certicamara.certifactura.infraestructura.enums.EnumTipoDocumentoIdentificacion;
-import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionCertiFactura;
-import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionNegocio;
-import com.certicamara.certifactura.infraestructura.excepciones.ExcepcionTecnica;
-import com.certicamara.certifactura.test.dominio.conceptos.CreadorRolesFuncionalidades;
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.certicamara.certifactura.batch.dominio.facturaComputador.MasivoFacturaComputador;
+import com.certicamara.certifactura.batch.dominio.facturaElectronica.MasivoFacturaElectronica;
+import com.certicamara.certifactura.infraestructura.utilitarios.GeneradorXsd;
 
 /**
  * CertiFactura Certicámara S.A. TestAplicación
@@ -46,7 +23,7 @@ public class TestAplicacion
 	/**
 	 * @param args
 	 */
-	public static void main( String[ ] args )
+	public static void main2( String[ ] args )
 	{
 		// TODO Auto-generated method stub
 		TestAplicacion test = new TestAplicacion( );
@@ -156,11 +133,25 @@ public class TestAplicacion
 	
 	public void crearFuncionalidades()
 	{
-		ApplicationContext ctx = new ClassPathXmlApplicationContext( "com/certicamara/certifactura/aplicacion/aplication-context.xml" );
-		GeneradorFuncionalidades generador = ( GeneradorFuncionalidades ) ctx.getBean( "generadorFuncionalidades" );
+//		ApplicationContext ctx = new ClassPathXmlApplicationContext( "com/certicamara/certifactura/aplicacion/aplication-context.xml" );
+//		GeneradorFuncionalidades generador = ( GeneradorFuncionalidades ) ctx.getBean( "generadorFuncionalidades" );
+//
+//		// GestorComandos gestor = new GestorComandos( );
+//			generador.ejecutar( );
 
-		// GestorComandos gestor = new GestorComandos( );
-			generador.ejecutar( );
-
+	}
+	
+	public static void main( String[ ] args )
+	{
+		try
+		{
+			GeneradorXsd.generarEsquema( MasivoFacturaComputador.class );
+			//GeneradorXsd.generarEsquema( FacturaElectronicaTest.class);
+		}
+		catch ( Exception e )
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
